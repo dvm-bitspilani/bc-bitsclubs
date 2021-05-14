@@ -7,18 +7,34 @@
                 src="../assets/bc-logo.png" 
                 alt="bc-logo"
             >
-            <a href="#" class="logo-text">bits clubs</a>
+            <router-link 
+                    active-class="nav-active"
+                    class="logo-text"
+                    to="/" exact
+            >bits clubs</router-link>
         </div>
 
         <div class="nav-menu">
             <div class="nav-item">
-                <h1 class="logo-text">search</h1>
+                <router-link 
+                    active-class="nav-active"
+                    class="logo-text"
+                    to="/search" exact
+                >search</router-link>
             </div>
             <div class="nav-item">
-                <h1 class="logo-text">calendar</h1>
+                <router-link 
+                    active-class="nav-active"
+                    class="logo-text"
+                    to="/calendar" exact
+                >calendar</router-link>
             </div>
             <div class="nav-item">
-                <h1 class="logo-text">about</h1>
+                <router-link 
+                    active-class="nav-active"
+                    class="logo-text"
+                    to="/about" exact
+                >about</router-link>
             </div>
         </div>
 
@@ -73,6 +89,17 @@
         margin: 10px;
     }
 
+    .logo-text:hover {
+        opacity: 0.8;
+    }
+
+    .nav-active:hover {
+        opacity: 1;
+    }
+
+    .nav-active {
+        text-decoration: underline;
+    }
 
 </style>
 
