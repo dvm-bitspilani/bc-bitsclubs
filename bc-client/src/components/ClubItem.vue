@@ -43,7 +43,7 @@
         width: 400px;
         height: 100%;
         padding: 10px;
-        margin: 15px 0px 15px 0px;
+        margin: 15px 10px 15px 10px;
         background: #2F2F2F;
         border-radius: 20px;
         display: flex;

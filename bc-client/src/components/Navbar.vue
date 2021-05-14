@@ -16,6 +16,11 @@
         </div>
 
         <div class="nav-menu">
+            <router-link 
+                    active-class="nav-active"
+                    class="logo-text invisible"
+                    to="/club" exact
+            >dvm</router-link>
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
@@ -55,6 +60,9 @@
 
 // styling and CSS --> edit here @sarthak
 <style scoped>
+    .invisible {
+        opacity: 0;
+    }
 
     #bitsclubs-logo {
         height: 50px;
@@ -65,7 +73,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 30px 40px 0 40px;
+        margin: 30px 60px 0 60px;
     }
 
     .nav-logo {

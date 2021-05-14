@@ -1,67 +1,22 @@
 <template>
   <div class="home">
     <div class="hero-image" />
+    
     <div class="club-grid">
-      <ClubItem 
-      imgSrc="https://avatars.githubusercontent.com/u/14038814?s=200&v=4"
-      name="Department of Visual Media"
-      type="department"
-      tag1="FRONTEND DEVELOPMENT"
-      tag2="UI/UX DESIGN"
-      tag3="BACKEND DEVELOPMENT"
-      tag4="VIDEO EDITING"
-      />
-
-      <ClubItem 
-      imgSrc="https://avatars.githubusercontent.com/u/14038814?s=200&v=4"
-      name="Department of Visual Media"
-      type="department"
-      tag1="FRONTEND DEVELOPMENT"
-      tag2="UI/UX DESIGN"
-      tag3="BACKEND DEVELOPMENT"
-      tag4="VIDEO EDITING"
-      />
-
-      <ClubItem 
-      imgSrc="https://avatars.githubusercontent.com/u/14038814?s=200&v=4"
-      name="Department of Visual Media"
-      type="department"
-      tag1="FRONTEND DEVELOPMENT"
-      tag2="UI/UX DESIGN"
-      tag3="BACKEND DEVELOPMENT"
-      tag4="VIDEO EDITING"
-      />
-
-      <ClubItem 
-      imgSrc="https://avatars.githubusercontent.com/u/14038814?s=200&v=4"
-      name="Department of Visual Media"
-      type="department"
-      tag1="FRONTEND DEVELOPMENT"
-      tag2="UI/UX DESIGN"
-      tag3="BACKEND DEVELOPMENT"
-      tag4="VIDEO EDITING"
-      />
-
-      <ClubItem 
-      imgSrc="https://avatars.githubusercontent.com/u/14038814?s=200&v=4"
-      name="Department of Visual Media"
-      type="department"
-      tag1="FRONTEND DEVELOPMENT"
-      tag2="UI/UX DESIGN"
-      tag3="BACKEND DEVELOPMENT"
-      tag4="VIDEO EDITING"
-      />
-
-      <ClubItem 
-      imgSrc="https://avatars.githubusercontent.com/u/14038814?s=200&v=4"
-      name="Department of Visual Media"
-      type="department"
-      tag1="FRONTEND DEVELOPMENT"
-      tag2="UI/UX DESIGN"
-      tag3="BACKEND DEVELOPMENT"
-      tag4="VIDEO EDITING"
-      />
-
+      <div 
+        v-for="clubitem in response"
+        :key="clubitem.id"
+        >
+        <ClubItem 
+          :imgSrc="clubitem.imgSrc"
+          :name="clubitem.name"
+          :type="clubitem.type"
+          :tag1="clubitem.tag1"
+          :tag2="clubitem.tag2"
+          :tag3="clubitem.tag3"
+          :tag4="clubitem.tag4"
+        />
+      </div>
     </div>
     
   </div>
@@ -76,6 +31,72 @@ export default {
   components: {
     Navbar,
     ClubItem,
+  }, 
+  data() {
+		return {
+			response: [
+        {
+          id: 1,
+          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+          name: "Department of Visual Media",
+          type: "department",
+          tag1: "FRONTEND DEVELOPMENT",
+          tag2: "UI/UX DESIGN",
+          tag3: "BACKEND DEVELOPMENT",
+          tag4: "VIDEO EDITING",
+        },
+        {
+          id: 2,
+          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+          name: "Department of Visual Media",
+          type: "department",
+          tag1: "FRONTEND DEVELOPMENT",
+          tag2: "UI/UX DESIGN",
+          tag3: "BACKEND DEVELOPMENT",
+          tag4: "VIDEO EDITING",
+        },
+        {
+          id: 3,
+          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+          name: "Department of Visual Media",
+          type: "department",
+          tag1: "FRONTEND DEVELOPMENT",
+          tag2: "UI/UX DESIGN",
+          tag3: "BACKEND DEVELOPMENT",
+          tag4: "VIDEO EDITING",
+        },
+        {
+          id: 4,
+          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+          name: "Department of Visual Media",
+          type: "department",
+          tag1: "FRONTEND DEVELOPMENT",
+          tag2: "UI/UX DESIGN",
+          tag3: "BACKEND DEVELOPMENT",
+          tag4: "VIDEO EDITING",
+        },
+        {
+          id: 5,
+          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+          name: "Department of Visual Media",
+          type: "department",
+          tag1: "FRONTEND DEVELOPMENT",
+          tag2: "UI/UX DESIGN",
+          tag3: "BACKEND DEVELOPMENT",
+          tag4: "VIDEO EDITING",
+        },
+        {
+          id: 6,
+          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+          name: "Department of Visual Media",
+          type: "department",
+          tag1: "FRONTEND DEVELOPMENT",
+          tag2: "UI/UX DESIGN",
+          tag3: "BACKEND DEVELOPMENT",
+          tag4: "VIDEO EDITING",
+        },
+      ],
+    }
   }
 }
 </script>
@@ -89,6 +110,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 75px;
   }
 
   .hero-image {
