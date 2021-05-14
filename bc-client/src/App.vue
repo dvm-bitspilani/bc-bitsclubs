@@ -1,27 +1,27 @@
 <template>
   <div class="app">
-    <Home />
+    <Navbar />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Home from '@/views/Home.vue'
+  import Navbar from '@/components/Navbar.vue'
 
   export default {
     components: {
-      Home
+      Navbar
     }
   }
 
 </script>
 
 <style>
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: Airbnb Cereal App, sans-serif;
-  text-align: center;
-  background: #191919;
-}
-
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Airbnb Cereal App, sans-serif;
+    text-align: center;
+    background: #191919;
+  }
 </style>

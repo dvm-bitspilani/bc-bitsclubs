@@ -1,3 +1,4 @@
+// template --> add any HTML here @sarthak
 <template>
     <div class="navbar-root">
 
@@ -42,12 +43,17 @@
 </template>
 
 
+
+// scripts and imports --> lite for now @sarthak
 <script>
     export default {
         name: 'Navbar'
     }
 </script>
 
+
+
+// styling and CSS --> edit here @sarthak
 <style scoped>
 
     #bitsclubs-logo {
