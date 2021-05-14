@@ -65,7 +65,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 20px 40px 0 40px;
+        margin: 30px 40px 0 40px;
     }
 
     .nav-logo {
