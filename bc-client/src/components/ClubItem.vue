@@ -39,6 +39,7 @@
 
 
 <style scoped>
+
     .club-item{
         width: 400px;
         height: 100%;

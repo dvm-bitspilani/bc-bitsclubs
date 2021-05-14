@@ -6,7 +6,7 @@
       <div 
         v-for="clubitem in response"
         :key="clubitem.id"
-        >
+      >
         <ClubItem 
           :imgSrc="clubitem.imgSrc"
           :name="clubitem.name"
@@ -103,31 +103,30 @@ export default {
 
 <style scoped>
   .home {
-    margin: none;
     padding: none;
     display: flex;
-    margin: auto;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding-bottom: 75px;
+    margin: 0 40px 0 40px;
   }
 
   .hero-image {
     height: 500px;
     width: 90vw;
     background: #2F2F2F;
-    margin: 40px;
+    margin: 20px 0 20px 0;
     border-radius: 20px;
   }
 
   .club-grid {
     display: flex;
     flex-direction: row;
+    width: 100%;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
-    margin: 0 40px 0 40px;
+    justify-content: center;
   }
 
 
