@@ -35,7 +35,7 @@
 <style scoped>
 
     .cal-item{
-        width: 320px;
+        width: 340px;
         height: 100%;
         padding: 10px;
         margin: 15px 10px 15px 10px;
@@ -47,7 +47,9 @@
         justify-content: flex-start;
         cursor: pointer;
         transition: transform 300ms;
+        padding-left: 20px;
     }
+
 
     .cal-item:hover {
         transform: translateY(-5px);
@@ -105,6 +107,15 @@
         flex-wrap: wrap;
         color: white;
     }
+
+
+@media (max-width: 650px)
+{
+  .cal-item{
+      margin-left: -1.3%
+  };
+}
+
 
 
 </style>

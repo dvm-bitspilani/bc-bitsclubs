@@ -101,7 +101,7 @@
     }
 
     .club-type {
-        margin: 5px 0px;
+        margin: 88px 0px;
         padding: 3px 13px 3px 13px;
         background: #1f1f1f;
         color:#ffffff;
@@ -109,6 +109,7 @@
         font-size: 18px;
         text-transform: uppercase;
         display: inline-block;
+        position: absolute;
     }
     #dep-pill {
         background: #8F1D14;
@@ -150,6 +151,35 @@
         display: inline-block;
         font-weight: 500;
     }
+
+@media (max-width: 650px){
+.club-item{
+        width: 360px;
+        }
+
+    .club-item:hover {
+        transform: translateY(-5px);
+    }
+  
+  
+
+    .club-name {
+    font-size: 25px;
+    }
+
+    .club-type {
+      font-size: 15px;
+         }
+ 
+    .tag {
+       font-size: 12px;
+        }
+
+
+}
+
+
+
 
 </style>
 

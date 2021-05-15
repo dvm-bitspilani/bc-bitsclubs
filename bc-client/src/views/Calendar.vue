@@ -123,4 +123,17 @@ import CalendarItem from '@/components/CalendarItem.vue'
         font-weight: 500;
         padding: 30px 0 30px 0;
     }
+
+
+
+
+
+    @media (max-width:650px) {
+
+      .cal-grid{
+margin-left: -7%;
+
+      }
+      
+    }
 </style> 
