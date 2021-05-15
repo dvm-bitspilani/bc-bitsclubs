@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assocs",
+  "info": {
+    "name": "Assoc"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}

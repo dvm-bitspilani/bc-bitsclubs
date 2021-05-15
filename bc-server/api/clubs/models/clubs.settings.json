@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "clubs",
+  "collectionName": "club",
   "info": {
-    "name": "Clubs"
+    "name": "Club",
+    "description": ""
   },
   "options": {
     "increments": true,
