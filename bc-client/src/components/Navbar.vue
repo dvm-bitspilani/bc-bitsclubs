@@ -19,6 +19,13 @@
                 <router-link 
                     active-class="nav-active"
                     class="logo-text"
+                    to="/club" exact
+                >club</router-link>
+            </div>
+            <div class="nav-item">
+                <router-link 
+                    active-class="nav-active"
+                    class="logo-text"
                     to="/search" exact
                 >search</router-link>
             </div>
