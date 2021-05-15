@@ -74,7 +74,7 @@
         <h2 class="club-subh">Recruitment Process</h2>
         <p class="club-p">{{ response[0].recruitment }}</p>
       </div>
-      <!-- <div class="info-form">{{ response[0].form }}</div> -->
+      <div class="info-form">{{ response[0].form }}</div>
     </div> 
 
     <div>
@@ -92,23 +92,11 @@
 
     <div class="club-text">
       <h2 class="club-subh">Frequently Asked Questions</h2>
-      <p class="club-p">{{ response[0].perks }}</p>
+      <p class="club-p">{{ response[0].faq }}</p>
     </div>   
 
     <div class="club-contact">
       <h2 class="club-subh">Contact Us</h2>
-      <div class="contact-grid">
-        <div 
-        v-for="contact in response[0].contact"
-        :key="contact.id"
-        >
-          <ContactCard
-            :imgSrc="contact.imgSrc"
-            :name="contact.name"
-            :designation="contact.designation"
-          />
-        </div>
-      </div>
     </div>   
 
   </div>
@@ -117,13 +105,11 @@
 <script>
 import Feature from '@/components/Feature.vue'
 import CalendarItem from '@/components/CalendarItem.vue'
-import ContactCard from '@/components/ContactCard.vue'
 
   export default {
     name: 'Club',
     components: {
       Feature,
-      ContactCard,
       CalendarItem,
     }, 
     data() {
@@ -149,19 +135,19 @@ import ContactCard from '@/components/ContactCard.vue'
                 id: 1,
                 name: "Parth Sharma",
                 designation: "Frontend Developer",
-                imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
               },
               {
                 id: 2,
                 name: "Parth Sharma",
                 designation: "Frontend Developer",
-                imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
               },
               {
                 id: 3,
                 name: "Parth Sharma",
                 designation: "Frontend Developer",
-                imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
               },
             ],
             portfolio: [
@@ -379,15 +365,6 @@ import ContactCard from '@/components/ContactCard.vue'
   }
 
   .cal-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: -15px;
-  }
-
-  .contact-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
