@@ -34,6 +34,21 @@
 
     <div class="club-calendar">
       <h2 class="club-subh">Upcoming Events</h2>
+      <div class="cal-grid">
+        <div 
+          v-for="calItem in response[0].calendar"
+          :key="calItem.id"
+        >
+          <CalendarItem 
+            :imgSrc="calItem.imgSrc"
+            :eventName="calItem.eventName"
+            :date="calItem.date"
+            :link="calItem.link"
+            :description="calItem.description"
+          />
+        </div>
+      </div>
+      
     </div>
 
     <div>
@@ -89,11 +104,13 @@
 
 <script>
 import Feature from '@/components/Feature.vue'
+import CalendarItem from '@/components/CalendarItem.vue'
 
   export default {
     name: 'Club',
     components: {
-      Feature
+      Feature,
+      CalendarItem,
     }, 
     data() {
       return {
@@ -157,6 +174,48 @@ import Feature from '@/components/Feature.vue'
               {
                 id: 6,
                 imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+              },
+            ],
+            calendar: [
+              {
+                id: 1,
+                eventName: "DVM Airmeet Orientation",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+                date: "4.00PM, 11/03/2021",
+                link: "bit.ly/dvmorientation",
+                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
+              },
+              {
+                id: 2,
+                eventName: "DVM Airmeet Orientation",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+                date: "4.00PM, 11/03/2021",
+                link: "bit.ly/dvmorientation",
+                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
+              },
+              {
+                id: 3,
+                eventName: "DVM Airmeet Orientation",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+                date: "4.00PM, 11/03/2021",
+                link: "bit.ly/dvmorientation",
+                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
+              },
+              {
+                id: 4,
+                eventName: "DVM Airmeet Orientation",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+                date: "4.00PM, 11/03/2021",
+                link: "bit.ly/dvmorientation",
+                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
+              },
+              {
+                id: 5,
+                eventName: "DVM Airmeet Orientation",
+                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
+                date: "4.00PM, 11/03/2021",
+                link: "bit.ly/dvmorientation",
+                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
               },
             ]
           }
@@ -290,7 +349,6 @@ import Feature from '@/components/Feature.vue'
     scrollbar-color: blue orange;
   }
 
-  /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 10px;
     height: 20px;
@@ -304,5 +362,13 @@ import Feature from '@/components/Feature.vue'
   *::-webkit-scrollbar-thumb {
     background-color: #2f2f2f;
     border-radius: 10px;
+  }
+
+  .cal-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
   }
 </style>
