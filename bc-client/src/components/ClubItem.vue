@@ -7,7 +7,27 @@
             />
             <div class="title-text">
                 <h1 class="club-name">{{ name }}</h1>
-                <h2 class="club-type">{{ type }}</h2>
+                <h2 
+                    class="club-type"
+                    v-if="type === 'department'"
+                    id="dep-pill"
+                >{{ type }}</h2>
+                <h2 
+                    class="club-type"
+                    v-if="type === 'club'"
+                    id="club-pill"
+                >{{ type }}</h2>
+                <h2 
+                    class="club-type"
+                    v-if="type === 'tech-team'"
+                    id="tech-pill"
+                >Tech Team</h2>
+                <h2 
+                    class="club-type"
+                    v-if="type === 'assoc'"
+                    id="assoc-pill"
+                >{{ type }}</h2>
+
             </div>
         </div>
         <div class="tags-section">
@@ -83,14 +103,25 @@
     .club-type {
         margin: 5px 0px;
         padding: 3px 13px 3px 13px;
-        background: white;
-        color:#2F2F2F;
+        background: #1f1f1f;
+        color:#ffffff;
         border-radius: 25px;
         font-size: 18px;
         text-transform: uppercase;
         display: inline-block;
     }
-
+    #dep-pill {
+        background: #8F1D14;
+    }
+    #club-pill {
+        background: #F89D13;
+    }
+    #tech-pill {
+        background: rgb(40, 40, 173);
+    }
+    #assoc-pill {
+        background: rgb(9, 120, 9);
+    }
     .title-text {
         display: flex;
         margin-left: 15px;

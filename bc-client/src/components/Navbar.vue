@@ -11,7 +11,7 @@
                     active-class="nav-active"
                     class="logo-text"
                     to="/" exact
-            >Bits Clubs</router-link>
+            >bits clubs</router-link>
         </div>
 
         <div class="nav-menu">
@@ -20,21 +20,21 @@
                     active-class="nav-active"
                     class="logo-text"
                     to="/search" exact
-                >Search</router-link>
+                >search</router-link>
             </div>
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
                     class="logo-text"
                     to="/calendar" exact
-                >Calendar</router-link>
+                >calendar</router-link>
             </div>
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
                     class="logo-text"
                     to="/about" exact
-                >About</router-link>
+                >about</router-link>
             </div>
         </div>
 
