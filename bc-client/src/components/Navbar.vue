@@ -1,7 +1,6 @@
 // template --> add any HTML here @sarthak
 <template>
     <div class="navbar-root">
-
         <div class="nav-logo">
             <img 
                 id="bitsclubs-logo"
@@ -16,11 +15,6 @@
         </div>
 
         <div class="nav-menu">
-            <router-link 
-                    active-class="nav-active"
-                    class="logo-text invisible"
-                    to="/club" exact
-            >dvm</router-link>
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
@@ -61,7 +55,16 @@
 // styling and CSS --> edit here @sarthak
 <style scoped>
     .invisible {
-        opacity: 0;
+        display: none;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer; 
+        color: rgba(255,255,255,0.8);
+        font-size: 24px;
     }
 
     #bitsclubs-logo {
@@ -69,30 +72,15 @@
         width: 50px;
     }
 
-    .navbar-root {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 30px 60px 0 60px;
-    }
 
     .nav-logo {
-        width: 30%;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         margin: auto;
         
-    }
-
-    .nav-menu {
-        width: 70%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        margin: auto;
     }
 
     .logo-text {
@@ -114,6 +102,43 @@
     .nav-active {
         text-decoration: underline;
     }
+
+    @media screen and (max-width: 650px){
+
+        .navbar-root {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 30px 40px 0 40px;
+        }
+
+        .nav-menu {
+            margin: 10px 0px 10px -10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+    }
+
+     @media screen and (min-width: 650px){
+        .navbar-root {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 30px 60px 0 60px;
+        }
+        .nav-menu {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin: auto;
+        }
+     }
 
 </style>
 
