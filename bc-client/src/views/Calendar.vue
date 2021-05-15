@@ -111,6 +111,7 @@ import CalendarItem from '@/components/CalendarItem.vue'
         justify-content: flex-start;
         align-items: center;
         margin-left: -15px;
+     
     }
     .cal-subh {
         font-size: 24px;
@@ -130,10 +131,18 @@ import CalendarItem from '@/components/CalendarItem.vue'
 
     @media (max-width:650px) {
 
-      .cal-grid{
-margin-left: -7%;
+  
+.cal-header{
+  font-size: 25px;
+}
 
-      }
-      
+.cal-grid{margin-left: 0px;
+justify-content:space-around
+
+}
+
+
+
+
     }
 </style> 

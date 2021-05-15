@@ -4,6 +4,8 @@
             <img :src="imgSrc" class="contact-img" >
             <div class="contact-name">{{ name }}</div>
             <div class="contact-desig">{{ designation }}</div>
+            <div class="contact-email">Email: {{ email }}</div>
+
         </div>
     </div>
 </template>
@@ -14,7 +16,8 @@ export default {
     props: [
         "imgSrc",
         "name",
-        "designation"
+        "designation",
+        "email"
     ]
 }
 </script>
@@ -23,6 +26,8 @@ export default {
     .wrapper {
         margin-right: 20px;
     }
+
+
     .contact-card {
         height: 100%;
         width: 100%;
@@ -32,22 +37,36 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: transform 300ms;
+        margin-top: 10%;
+       
     }
-    .contact-card:hover {
-        transform: translateY(-5px);
-    }
+ 
+
+
     .contact-name {
         font-size: 24px;
         color: white;
         font-weight: 500;
     }
+
+
     .contact-desig {
         font-size: 20px;
         color: white;
         font-weight: 400;
         padding-bottom: 20px;
     }
+
+
+
+    .contact-email{    
+        font-size: 15px;
+        color: white;
+        font-weight: 400;
+        padding-bottom: 20px;
+    }
+
+
     .contact-img {
         height: 200px;
         width: 180px;
@@ -55,4 +74,7 @@ export default {
         border-radius: 35px;
         object-fit: cover;
     }
+
+
+
 </style>

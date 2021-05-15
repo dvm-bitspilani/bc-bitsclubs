@@ -111,9 +111,36 @@
 
 @media (max-width: 650px)
 {
-  .cal-item{
-      margin-left: -1.3%
-  };
+ 
+ .cal-item{
+        width: 300px;
+        padding-right:16px ;
+       
+    }
+
+
+
+ .cal-name {
+        font-size: 18px;
+    }
+
+    .cal-date, .cal-link {
+     
+        font-size: 14px;
+    }
+    
+
+    .cal-description {
+      
+        font-size: 14px;
+    }
+
+
+
+
+
+
+
 }
 
 

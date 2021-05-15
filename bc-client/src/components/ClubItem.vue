@@ -154,25 +154,21 @@
 
 @media (max-width: 650px){
 .club-item{
-        width: 360px;
+        width: 80vw;
         }
 
-    .club-item:hover {
-        transform: translateY(-5px);
-    }
-  
-  
+    
 
     .club-name {
-    font-size: 25px;
+    font-size: 20px;
     }
 
     .club-type {
-      font-size: 15px;
+      font-size: 12px;
          }
  
     .tag {
-       font-size: 12px;
+       font-size: 10px;
         }
 
 

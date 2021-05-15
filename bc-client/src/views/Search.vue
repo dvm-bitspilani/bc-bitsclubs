@@ -141,7 +141,7 @@ export default {
 @media (max-width:650px) {
   .search-bar{
     width: 70vw;
-    font-size: 15px;
+    font-size: 12px;
     
 
   }
