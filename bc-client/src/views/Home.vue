@@ -48,8 +48,8 @@ export default {
         {
           id: 2,
           imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
-          type: "department",
+          name: "Debating Society at BITS Pilani",
+          type: "club",
           tag1: "FRONTEND DEVELOPMENT",
           tag2: "UI/UX DESIGN",
           tag3: "BACKEND DEVELOPMENT",
@@ -58,8 +58,8 @@ export default {
         {
           id: 3,
           imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
-          type: "department",
+          name: "Student Union Tech Team",
+          type: "tech-team",
           tag1: "FRONTEND DEVELOPMENT",
           tag2: "UI/UX DESIGN",
           tag3: "BACKEND DEVELOPMENT",
@@ -68,8 +68,8 @@ export default {
         {
           id: 4,
           imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
-          type: "department",
+          name: "Capital One — Delhi Assoc",
+          type: "assoc",
           tag1: "FRONTEND DEVELOPMENT",
           tag2: "UI/UX DESIGN",
           tag3: "BACKEND DEVELOPMENT",
