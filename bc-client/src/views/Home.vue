@@ -129,5 +129,8 @@ export default {
     justify-content: center;
   }
 
+  .media-slider {
+    overflow-x: scroll;
+  }
 
 </style>
