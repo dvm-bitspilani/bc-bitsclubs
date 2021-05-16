@@ -39,9 +39,6 @@
       "required": false,
       "pluginOptions": {}
     },
-    "recruitmentProcess": {
-      "type": "richtext"
-    },
     "logo": {
       "model": "file",
       "via": "related",
@@ -53,15 +50,6 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-    },
-    "about": {
-      "type": "richtext"
-    },
-    "perks": {
-      "type": "richtext"
-    },
-    "faq": {
-      "type": "richtext"
     },
     "recruitmentForm": {
       "type": "string"
@@ -100,6 +88,18 @@
         "techTeam",
         "assoc"
       ]
+    },
+    "recruitmentProcess": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text"
+    },
+    "perks": {
+      "type": "text"
+    },
+    "faq": {
+      "type": "string"
     }
   }
 }
