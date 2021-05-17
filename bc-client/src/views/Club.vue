@@ -11,7 +11,7 @@
 
         <div class="club-info-text">
           <h1 class="club-title">{{ response[0].name }}</h1>
-          <div class="tags-section">
+          <div class="tags-section" id="desktop-tags">
               <h2 class="tag">{{ response[0].tag1 }}</h2>
               <h2 class="tag">{{ response[0].tag2 }}</h2>
               <h2 class="tag">{{ response[0].tag3 }}</h2>
@@ -25,6 +25,13 @@
         <h1 id="recr-true" class="status-pill" v-if="response[0].isRecruiting">RECRUITING</h1>
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
+  <div class="tags-section" id="mobile-tags">
+              <h2 class="tag">{{ response[0].tag1 }}</h2>
+              <h2 class="tag">{{ response[0].tag2 }}</h2>
+              <h2 class="tag">{{ response[0].tag3 }}</h2>
+          </div>
+
+
     </div>
 
     <div class="club-text">
@@ -247,6 +254,12 @@ import ContactCard from '@/components/ContactCard.vue'
 
 
 <style scoped>
+#mobile-tags{
+  display: none;
+}
+
+
+
   .club {
     margin: 40px 60px 40px 60px;
   }
@@ -348,10 +361,7 @@ import ContactCard from '@/components/ContactCard.vue'
     flex-direction: row;
     overflow-x: scroll;
   }
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: blue orange;
-  }
+ 
    *::-webkit-scrollbar {
   height: 8px;
 }
@@ -386,8 +396,9 @@ import ContactCard from '@/components/ContactCard.vue'
 
 @media (max-width:650px) {
 
-
-
+#mobile-tags{
+  display: unset;
+}
 
 
 .club{
@@ -407,8 +418,6 @@ import ContactCard from '@/components/ContactCard.vue'
 
 .club-title{
 font-size: 22px;
-
-padding-bottom: 12%;
 }
 
 
@@ -421,9 +430,6 @@ padding-bottom: 12%;
   }
    .status-pill{
 font-size: 15px;
-position: absolute;
-margin-top:-46% ;
-margin-left:12%
 }
 
 
@@ -461,6 +467,9 @@ margin-left: 0;
 
 
 
+#desktop-tags{
+  display: none;
+}
 
 
 
