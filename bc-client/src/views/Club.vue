@@ -3,7 +3,7 @@
 
     <div class="club-header">
       <div class="club-info">
-      <div><img 
+      <div class="clublogo"><img 
           class="club-logo"
           :src="response[0].imgSrc" 
           alt=""
@@ -273,6 +273,7 @@ import ContactCard from '@/components/ContactCard.vue'
     height: 120px;
     width: 120px;
     border-radius: 15px;
+    
   }
   
   .club-info-text {
@@ -401,91 +402,93 @@ import ContactCard from '@/components/ContactCard.vue'
 
 @media (max-width:650px) {
 
-#mobile-tags{
+    #mobile-tags{
   display: unset;
   margin-top: 2%;
-}
+  }
 
-.club{
+  /* .clublogo{
+  margin-left: 0.1%;
+  } */
+
+    .club{
   margin:0
-}
+   }  
 
-.club-header{
+    .club-header{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    flex-grow: 1;
+    
+  }
+
+   .club-info-text{
+      margin-left: 0px;
    }
 
-.club-info-text{
-      margin-left: 0px;
-}
 
-
-.club-info {
+   .club-info {
     display: flex;
     flex-direction: row;
     justify-content:center;
     flex-wrap: wrap;
+    }
 
-  }
+    .club-subh{
+    text-align:left;  
+    font-size: 28px; 
+    }
 
-  .club-subh{
-    text-align:left;   
-  }
+    .club-title{
+    font-size: 23px;
+    }
 
-.club-title{
-font-size: 22px;
+    .status-pill{
+    font-size: 15px;
+    margin-top: 10%;
+    }
 
-}
+    .tags-section {
+    margin-top: 4%;
+    }
 
-.status-pill{
-font-size: 15px;
-margin-top: 10%;
-}
-
-.tags-section {
-margin-top: 4%;
-
- }
-
-.tag {
-      font-size: 12px;
- }
+    .tag {
+    font-size: 12px;
+    }
 
 
-.club-text {
+    .club-text {
     width: 88vw;
     padding-left: 20px;
- }
+    }
 
 
-.media-slider, #media{padding-right: 20px;
+    .media-slider, #media{padding-right: 20px;
     padding-left: 20px;
-
-}
+    }
 
  
-.club-p { 
+    .club-p { 
     font-size: 15px;
     padding-right:20px;
   }
 
 
-.cal-grid{
-justify-content: center;
-margin-left: 0;
-}
-
-.contact-grid {
-    justify-content: center;
+    .cal-grid{
+    justify-content: flex-start;
+    margin-left: 2%;
     }
 
-#desktop-tags{
-  display: none;
-}
+    .contact-grid {
+    justify-content: flex-start;
+      margin-left: 20%;
+    }
 
-
+    #desktop-tags{
+   display: none;
+    }
 
   }
 

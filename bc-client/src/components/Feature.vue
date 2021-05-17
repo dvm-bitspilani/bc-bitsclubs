@@ -22,13 +22,14 @@
         width: 450px;
         height: 250px;
         margin: 10px 40px 10px 0px;
+        border-radius: 20px;
     }
 
 
 @media (max-width:600px) {
-.feature{
+    .feature{
     width: 300px;
-}
+    }
 
     
 }

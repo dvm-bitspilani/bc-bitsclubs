@@ -112,26 +112,23 @@
 @media (max-width: 650px)
 {
  
- .cal-item{
+    .cal-item {
         width: 300px;
         padding-right:16px ;
-       
-    }
+       }
 
 
 
- .cal-name {
+    .cal-name {
         font-size: 18px;
     }
 
-    .cal-date, .cal-link {
-     
+    .cal-date, .cal-link { 
         font-size: 14px;
     }
     
 
-    .cal-description {
-      
+    .cal-description { 
         font-size: 14px;
     }
 

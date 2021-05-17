@@ -132,17 +132,14 @@ import CalendarItem from '@/components/CalendarItem.vue'
     @media (max-width:650px) {
 
   
-.cal-header{
-  font-size: 25px;
-}
+    .cal-header{
+    font-size: 25px;
+     }
 
-.cal-grid{margin-left: 0px;
-justify-content:space-around
-
-}
-
-
-
+    .cal-grid{
+    margin-left: 0px;
+    justify-content:space-around
+     }
 
     }
 </style> 

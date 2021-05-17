@@ -77,11 +77,12 @@ export default {
 
 
 
-@media (max-width: 600px) {   .wrapper {
+@media (max-width: 600px) {   
+    
+    .wrapper {
         margin-right: 0px;
     }
 
-    
 }
 
 

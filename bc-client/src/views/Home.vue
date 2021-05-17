@@ -142,10 +142,7 @@ export default {
 
   .hero-image{
     width: 85vw;
-    height: 280px;
-   
-    
-    
+    height: 280px;  
   }
 }
 

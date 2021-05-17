@@ -153,24 +153,21 @@
     }
 
 @media (max-width: 650px){
-.club-item{
+    .club-item{
         width: 80vw;
         }
 
-    
-
     .club-name {
     font-size: 20px;
-    }
+        }
 
     .club-type {
       font-size: 12px;
-         }
+        }
  
     .tag {
        font-size: 10px;
         }
-
 
 }
 
