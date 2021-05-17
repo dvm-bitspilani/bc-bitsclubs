@@ -24,5 +24,15 @@
         margin: 10px 40px 10px 0px;
     }
 
+
+@media (max-width:600px) {
+.feature{
+    width: 300px;
+}
+
+    
+}
+
+
 </style>
 

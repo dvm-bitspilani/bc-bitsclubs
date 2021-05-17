@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
     .wrapper {
-        margin-right: 20px;
+        margin-right: 30px;
     }
 
 
@@ -37,7 +37,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 10%;
+        margin-top: 12%;
        
     }
  
@@ -75,6 +75,14 @@ export default {
         object-fit: cover;
     }
 
+
+
+@media (max-width: 600px) {   .wrapper {
+        margin-right: 0px;
+    }
+
+    
+}
 
 
 </style>

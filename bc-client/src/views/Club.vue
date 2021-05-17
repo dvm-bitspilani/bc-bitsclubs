@@ -3,11 +3,11 @@
 
     <div class="club-header">
       <div class="club-info">
-        <img 
+      <div><img 
           class="club-logo"
           :src="response[0].imgSrc" 
           alt=""
-        >
+        ></div>  
 
         <div class="club-info-text">
           <h1 class="club-title">{{ response[0].name }}</h1>
@@ -25,14 +25,17 @@
         <h1 id="recr-true" class="status-pill" v-if="response[0].isRecruiting">RECRUITING</h1>
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
-  <div class="tags-section" id="mobile-tags">
+
+         <div class="tags-section" id="mobile-tags">
               <h2 class="tag">{{ response[0].tag1 }}</h2>
               <h2 class="tag">{{ response[0].tag2 }}</h2>
               <h2 class="tag">{{ response[0].tag3 }}</h2>
           </div>
+        </div>
 
 
-    </div>
+
+
 
     <div class="club-text">
       <h2 class="club-subh">About Us</h2>
@@ -40,7 +43,7 @@
     </div>
 
     <div class="club-calendar">
-      <h2 class="club-subh">Upcoming Events</h2>
+      <h2 class="club-subh" id="media">Upcoming Events</h2>
       <div class="cal-grid">
         <div 
           v-for="calItem in response[0].calendar"
@@ -59,7 +62,7 @@
     </div>
 
     <div>
-      <h2 class="club-subh">Portfolio and Past Work</h2>
+      <h2 class="club-subh" id="media">Portfolio and Past Work</h2>
       <div class="media-slider">
         <div 
         v-for="item in response[0].portfolio"
@@ -85,7 +88,7 @@
     </div> 
 
     <div>
-      <h2 class="club-subh">Gallery</h2>
+      <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
         <div 
         v-for="item in response[0].portfolio"
@@ -103,7 +106,7 @@
     </div>   
 
     <div class="club-contact">
-      <h2 class="club-subh">Contact Us</h2>
+      <h2 class="club-subh" id="media">Contact Us</h2>
        <div class="contact-grid">
         <div 
         v-for="contact in response[0].contact"
@@ -258,9 +261,7 @@ import ContactCard from '@/components/ContactCard.vue'
   display: none;
 }
 
-
-
-  .club {
+ .club {
     margin: 40px 60px 40px 60px;
   }
   .club-header, .club-info {
@@ -307,13 +308,14 @@ import ContactCard from '@/components/ContactCard.vue'
     color: white;
   }
   .club-status {
-    margin-right: 0px;
+  
     justify-content: center;
     display: flex;
     align-items: center;
+    
   }
   .status-pill {
-    margin: 10px 56px 10px 6px;
+    margin: 10px 6px 10px 6px;
     padding: 6px 20px 6px 20px;
     background: #616161;
     color:white;
@@ -336,6 +338,7 @@ import ContactCard from '@/components/ContactCard.vue'
     color:rgb(255, 0, 0);
     box-shadow: rgba(255, 101, 101, 0.2) 0px 8px 24px;
   }
+
   .club-text {
     width: 60vw;
     display: flex;
@@ -356,13 +359,15 @@ import ContactCard from '@/components/ContactCard.vue'
     font-size: 19px;
     font-weight: 400;
   }
+
+
   .media-slider {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-  }
+     }
  
-   *::-webkit-scrollbar {
+  *::-webkit-scrollbar {
   height: 8px;
 }
 
@@ -384,6 +389,7 @@ import ContactCard from '@/components/ContactCard.vue'
     align-items: center;
     margin-left: -15px;
   }
+
   .contact-grid {
     display: flex;
     flex-direction: row;
@@ -393,79 +399,87 @@ import ContactCard from '@/components/ContactCard.vue'
   }
 
 
-
 @media (max-width:650px) {
 
 #mobile-tags{
   display: unset;
+  margin-top: 2%;
 }
-
 
 .club{
   margin:0
 }
-  .club-header, .club-info {
+
+.club-header{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+   }
+
+.club-info-text{
+      margin-left: 0px;
+}
+
+
+.club-info {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+
   }
 
-
-  .club-subh{text-align:center;}
-
-
+  .club-subh{
+    text-align:left;   
+  }
 
 .club-title{
 font-size: 22px;
+
 }
 
-
-
-.club-text {
-    width: 88vw;
-    padding-right: 20px;
-    padding-left: 20px;
- 
-  }
-   .status-pill{
+.status-pill{
 font-size: 15px;
+margin-top: 10%;
 }
-
 
 .tags-section {
 margin-top: 4%;
 
-  }
+ }
 
 .tag {
       font-size: 12px;
  }
 
 
+.club-text {
+    width: 88vw;
+    padding-left: 20px;
+ }
 
-.club-p {
-    
+
+.media-slider, #media{padding-right: 20px;
+    padding-left: 20px;
+
+}
+
+ 
+.club-p { 
     font-size: 15px;
-    
+    padding-right:20px;
   }
-
 
 
 .cal-grid{
 justify-content: center;
 margin-left: 0;
-
 }
 
-
-
-.contact-grid {margin-left: 16px;
-    justify-content: center
-
+.contact-grid {
+    justify-content: center;
     }
-
-
 
 #desktop-tags{
   display: none;
