@@ -11,7 +11,7 @@
                     active-class="nav-active"
                     class="logo-text"
                     to="/" exact
-            >Bits Clubs</router-link>
+            >Club-Zone</router-link>
 
       <div class="hamburger">
 
@@ -96,8 +96,6 @@
 </template>
 
 
-
-// scripts and imports --> lite for now @sarthak
 <script>
     export default {
         name: 'Navbar'
@@ -147,7 +145,7 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        margin: auto;
+        margin-left: 5px;
         
     }
 
@@ -173,7 +171,7 @@
 
    .hamburger{
        display: none;
-    margin-left: 20%;
+    margin-left: 18%;
 
         }
 
@@ -275,10 +273,10 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            margin: 30px 20px 0px 30px;
+            margin: 30px 20px 0px 23px;
         }
 
-     .hamburger{
+        .hamburger{
     display: unset;
 }
 .nav-menu{
