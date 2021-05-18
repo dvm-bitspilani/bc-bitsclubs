@@ -127,9 +127,6 @@
 
 </script>
 
-
-
-// styling and CSS --> edit here @sarthak
 <style scoped>
 
 
@@ -137,14 +134,6 @@
         display: none;
     }
 
-    .navbar-toggle {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        cursor: pointer; 
-        color: rgba(255,255,255,0.8);
-        font-size: 24px;
-    }
 
     #bitsclubs-logo {
         height: 50px;
@@ -184,12 +173,15 @@
 
    .hamburger{
        display: none;
-       margin-left: 10%;
+    margin-left: 20%;
+
         }
 
 
 .container{
   width: 80%;
+
+ 
 }
 
 
@@ -197,8 +189,10 @@
     position: relative;
     z-index: 5;
     top: 5%;  
-    width: 20px;   height: 35px;
+    width: 20px;  
+     height: 35px;
     cursor: pointer;
+    
 }
 .container ul.toggle li{
     position: absolute;
@@ -235,11 +229,11 @@
 
 .container .sidebar{
     position: absolute;
-    top: 0;  left: -350px;
+    top: 0;  left: -400px;
     background: #262626;
-    width: 350px;   height: 100vh;
+    width: 96vw;   height: 100vh;
     box-sizing: border-box;
-    padding: 50px 40px;
+    padding: 80px 40px;
     text-align: center;
     transition: .9s;
     z-index: 4;
@@ -273,12 +267,6 @@
 }
 
 
-
-
-
-
-
-
     @media screen and (max-width: 650px){
        
 
@@ -287,15 +275,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            margin: 30px 40px 0 40px;
-        }
-
-        .nav-menu {
-            margin: 10px 0px 10px -10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
+            margin: 30px 20px 0px 30px;
         }
 
      .hamburger{
@@ -306,6 +286,12 @@
 }
 
 
+
+.logo-text{
+    font-size: 6.1vw;
+    margin: 10px 6px 10px 15px; 
+    font-weight: 800;  
+}
 
         
     }
@@ -339,6 +325,12 @@
             margin: auto;
         }
      }
+
+
+
+
+
+
 
 </style>
 

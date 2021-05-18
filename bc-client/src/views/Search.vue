@@ -89,6 +89,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .search {
   margin: none;
   padding: none;

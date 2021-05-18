@@ -20,8 +20,7 @@
         </div>
         
       </div>
-
-      <div class="club-status">
+       <div class="club-status">
         <h1 id="recr-true" class="status-pill" v-if="response[0].isRecruiting">RECRUITING</h1>
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
@@ -407,9 +406,6 @@ import ContactCard from '@/components/ContactCard.vue'
   margin-top: 2%;
   }
 
-  /* .clublogo{
-  margin-left: 0.1%;
-  } */
 
     .club{
   margin:0
@@ -420,9 +416,10 @@ import ContactCard from '@/components/ContactCard.vue'
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    flex-grow: 1;
-    
-  }
+
+    }
+
+  
 
    .club-info-text{
       margin-left: 0px;
@@ -461,12 +458,12 @@ import ContactCard from '@/components/ContactCard.vue'
 
     .club-text {
     width: 88vw;
-    padding-left: 20px;
+    padding-left: 32px;
     }
 
 
     .media-slider, #media{padding-right: 20px;
-    padding-left: 20px;
+    padding-left: 32px;
     }
 
  
@@ -478,7 +475,7 @@ import ContactCard from '@/components/ContactCard.vue'
 
     .cal-grid{
     justify-content: flex-start;
-    margin-left: 2%;
+    margin-left: 20px;
     }
 
     .contact-grid {
