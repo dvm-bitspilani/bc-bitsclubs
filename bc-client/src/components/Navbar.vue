@@ -11,7 +11,7 @@
                     active-class="nav-active"
                     class="logo-text"
                     to="/" exact
-            >Club-Zone</router-link>
+            >bits clubs</router-link>
 
       <div class="hamburger">
 
@@ -24,30 +24,38 @@
             </ul>
             <div class="sidebar">
                  <ul class="menu">
-                     <li> <router-link 
-                    active-class="nav-active"
-                    class="logo-text"
-                    to="/club" exact
-                >Club</router-link></li>
-                     <li>   <router-link 
-                    active-class="nav-active"
-                    class="logo-text"
-                    to="/search" exact
-                >Search</router-link></li>
+                     <li>
+                        <router-link 
+                            active-class="nav-active"
+                            class="logo-text"
+                            to="/club" exact
+                        >club</router-link>
+                    </li>
 
-                     <li> <router-link 
-                    active-class="nav-active"
-                    class="logo-text"
-                    to="/calendar" exact
-                >Calendar</router-link></li>
-                     <li><router-link 
-                    active-class="nav-active"
-                    class="logo-text"
-                    to="/about" exact
-                >About</router-link></li>
-                  
+                    <li>   
+                        <router-link 
+                            active-class="nav-active"
+                            class="logo-text"
+                            to="/search" exact
+                        >search</router-link>
+                    </li>
+
+                    <li>
+                        <router-link 
+                            active-class="nav-active"
+                            class="logo-text"
+                            to="/calendar" exact
+                        >calendar</router-link>
+                    </li>
+                    
+                    <li>
+                        <router-link 
+                            active-class="nav-active"
+                            class="logo-text"
+                            to="/about" exact
+                        >About</router-link>
+                    </li>
                  </ul>
-         
             </div>
         </div>
 
@@ -56,14 +64,7 @@
 </div>
 
         <div class="nav-menu">
-<div class="nav-item">
-                <router-link 
-                    active-class="nav-active"
-                    class="logo-text"
-                    to="/club" exact
-                >Club</router-link>
-               </div>
-
+    
 
             <div class="nav-item">
                 <router-link 
@@ -72,26 +73,28 @@
                     to="/club" exact
                 >club</router-link>
             </div>
+
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
                     class="logo-text"
                     to="/search" exact
-                >Search</router-link>
+                >search</router-link>
             </div>
+
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
                     class="logo-text"
                     to="/calendar" exact
-                >Calendar</router-link>
+                >calendar</router-link>
             </div>
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
                     class="logo-text"
                     to="/about" exact
-                >About</router-link>
+                >about</router-link>
             </div>
         </div>
 
@@ -133,6 +136,7 @@
 </script>
 
 <style scoped>
+
 
 
     .invisible {

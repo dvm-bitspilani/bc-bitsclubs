@@ -17,6 +17,42 @@
 </script>
 
 <style>
+  @font-face {
+    font-family: "Airbnb Cereal App";
+    src: local("Airbnb Cereal App"), url(../public/fonts/AirbnbCereal-Medium.ttf) format("truetype");
+    font-weight: medium;
+  }
+
+  @font-face {
+    font-family: "Airbnb Cereal App";
+    src: local("Airbnb Cereal App"), url(../public/fonts/AirbnbCereal-Medium.ttf) format("truetype");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "Airbnb Cereal App";
+    src: local("Airbnb Cereal App"), url(../public/fonts/AirbnbCereal-Medium.ttf) format("truetype");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "Airbnb Cereal App";
+    src: local("Airbnb Cereal App"), url(../public/fonts/AirbnbCereal-Bold.ttf) format("truetype");
+    font-weight: bold;
+
+  }
+  @font-face {
+    font-family: "Airbnb Cereal App";
+    src: local("Airbnb Cereal App"), url(../public/fonts/AirbnbCereal-Bold.ttf) format("truetype");
+    font-weight: 800;
+  }
+
+  @font-face {
+    font-family: "Airbnb Cereal App";
+    src: local("Airbnb Cereal App"), url(../public/fonts/AirbnbCereal-Book.ttf) format("truetype");
+    font-weight: normal;
+  }
+
   body {
     margin: 0px;
     padding: 0px;
