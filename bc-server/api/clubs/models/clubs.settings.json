@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "clubs",
+  "collectionName": "club",
   "info": {
-    "name": "Clubs"
+    "name": "Club",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,11 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "name": {
       "type": "string"
-    },
-    "About": {
-      "type": "text"
     },
     "portfolio": {
       "collection": "file",
@@ -29,9 +27,6 @@
       "required": false,
       "pluginOptions": {}
     },
-    "perks": {
-      "type": "text"
-    },
     "gallery": {
       "collection": "file",
       "via": "related",
@@ -43,6 +38,68 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "recruitmentForm": {
+      "type": "string"
+    },
+    "isRecruiting": {
+      "type": "boolean"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contact1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact"
+    },
+    "contact2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact"
+    },
+    "contact3": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact"
+    },
+    "clubTags": {
+      "type": "component",
+      "repeatable": false,
+      "component": "club-tags.club-tags"
+    },
+    "clubType": {
+      "type": "enumeration",
+      "enum": [
+        "department",
+        "club",
+        "techTeam",
+        "assoc"
+      ]
+    },
+    "recruitmentProcess": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text"
+    },
+    "perks": {
+      "type": "text"
+    },
+    "faq": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_tags_tags",
+  "info": {
+    "name": "tags",
+    "icon": "angry"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eventName": {
+      "type": "string"
+    },
+    "dateTime": {
+      "type": "datetime"
+    },
+    "link": {
+      "type": "string"
+    },
+    "clubName": {
+      "type": "string"
+    },
+    "eventDescription": {
+      "type": "text"
+    },
+    "featureImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
