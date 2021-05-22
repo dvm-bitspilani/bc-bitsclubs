@@ -3,15 +3,15 @@
 
     <div class="club-header">
       <div class="club-info">
-        <img 
+      <div class="clublogo"><img 
           class="club-logo"
           :src="response[0].imgSrc" 
           alt=""
-        >
+        ></div>  
 
         <div class="club-info-text">
           <h1 class="club-title">{{ response[0].name }}</h1>
-          <div class="tags-section">
+          <div class="tags-section" id="desktop-tags">
               <h2 class="tag">{{ response[0].tag1 }}</h2>
               <h2 class="tag">{{ response[0].tag2 }}</h2>
               <h2 class="tag">{{ response[0].tag3 }}</h2>
@@ -20,12 +20,21 @@
         </div>
         
       </div>
-
-      <div class="club-status">
+       <div class="club-status">
         <h1 id="recr-true" class="status-pill" v-if="response[0].isRecruiting">RECRUITING</h1>
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
-    </div>
+
+         <div class="tags-section" id="mobile-tags">
+              <h2 class="tag">{{ response[0].tag1 }}</h2>
+              <h2 class="tag">{{ response[0].tag2 }}</h2>
+              <h2 class="tag">{{ response[0].tag3 }}</h2>
+          </div>
+        </div>
+
+
+
+
 
     <div class="club-text">
       <h2 class="club-subh">About Us</h2>
@@ -33,7 +42,7 @@
     </div>
 
     <div class="club-calendar">
-      <h2 class="club-subh">Upcoming Events</h2>
+      <h2 class="club-subh" id="media">Upcoming Events</h2>
       <div class="cal-grid">
         <div 
           v-for="calItem in response[0].calendar"
@@ -52,7 +61,7 @@
     </div>
 
     <div>
-      <h2 class="club-subh">Portfolio and Past Work</h2>
+      <h2 class="club-subh" id="media">Portfolio and Past Work</h2>
       <div class="media-slider">
         <div 
         v-for="item in response[0].portfolio"
@@ -78,7 +87,7 @@
     </div> 
 
     <div>
-      <h2 class="club-subh">Gallery</h2>
+      <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
         <div 
         v-for="item in response[0].portfolio"
@@ -96,7 +105,7 @@
     </div>   
 
     <div class="club-contact">
-      <h2 class="club-subh">Contact Us</h2>
+      <h2 class="club-subh" id="media">Contact Us</h2>
        <div class="contact-grid">
         <div 
         v-for="contact in response[0].contact"
@@ -106,6 +115,7 @@
             :imgSrc="contact.imgSrc"
             :name="contact.name"
             :designation="contact.designation"
+            :email="contact.email"
           />
         </div>
       </div>
@@ -118,7 +128,6 @@
 import Feature from '@/components/Feature.vue'
 import CalendarItem from '@/components/CalendarItem.vue'
 import ContactCard from '@/components/ContactCard.vue'
-
   export default {
     name: 'Club',
     components: {
@@ -149,18 +158,24 @@ import ContactCard from '@/components/ContactCard.vue'
                 id: 1,
                 name: "Parth Sharma",
                 designation: "Frontend Developer",
+               email:"parthop@gmail.com",
+
                 imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
               },
               {
                 id: 2,
                 name: "Parth Sharma",
                 designation: "Frontend Developer",
+                                email:"parthop@gmail.com",
+
                 imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
               },
               {
                 id: 3,
                 name: "Parth Sharma",
                 designation: "Frontend Developer",
+                                email:"parthop@gmail.com",
+
                 imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
               },
             ],
@@ -241,21 +256,23 @@ import ContactCard from '@/components/ContactCard.vue'
 
 
 <style scoped>
+#mobile-tags{
+  display: none;
+}
 
-  .club {
+ .club {
     margin: 40px 60px 40px 60px;
   }
-
   .club-header, .club-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-
   .club-logo {
     height: 120px;
     width: 120px;
     border-radius: 15px;
+    
   }
   
   .club-info-text {
@@ -265,7 +282,6 @@ import ContactCard from '@/components/ContactCard.vue'
     align-items: flex-start;
     justify-content: center;
   }
-
   .tags-section {
     display: flex;
     margin-left: -5px;
@@ -274,7 +290,6 @@ import ContactCard from '@/components/ContactCard.vue'
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-
   .tag {
     margin: 5px 3px 5px 3px;
     padding: 3px 13px 3px 13px;
@@ -286,23 +301,21 @@ import ContactCard from '@/components/ContactCard.vue'
     display: inline-block;
     font-weight: 500;
   }
-
   .club-title {
     font-size: 48px;
     margin: 0;
     padding: 0;
     color: white;
   }
-
   .club-status {
-    margin-right: 0px;
+  
     justify-content: center;
     display: flex;
     align-items: center;
+    
   }
-
   .status-pill {
-    margin: 10px 56px 10px 6px;
+    margin: 10px 6px 10px 6px;
     padding: 6px 20px 6px 20px;
     background: #616161;
     color:white;
@@ -312,15 +325,12 @@ import ContactCard from '@/components/ContactCard.vue'
     display: inline-block;
     font-weight: 500;
     transition: transform 300ms;
-    cursor: pointer;
+    cursor: default;
   }
-
-  .status-pill:hover {
-    transform: translateY(-5px);
-  }
+  
 
   #recr-true {
-    background:rgb(0, 255, 13);
+    background:#19d00a;
     box-shadow: rgba(104, 255, 70, 0.15) 0px 8px 24px;
   }
   
@@ -334,7 +344,6 @@ import ContactCard from '@/components/ContactCard.vue'
     display: flex;
     flex-direction: column;
   }
-
   .club-subh {
     margin: 50px 0 10px 0;
     padding: 0;
@@ -342,7 +351,6 @@ import ContactCard from '@/components/ContactCard.vue'
     text-align: left;
     font-size: 28px;
   }
-
   .club-p {
     margin: 0px 0 10px 0;
     padding: 0;
@@ -352,31 +360,26 @@ import ContactCard from '@/components/ContactCard.vue'
     font-weight: 400;
   }
 
+
   .media-slider {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-  }
-
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: blue orange;
-  }
-
+     }
+ 
   *::-webkit-scrollbar {
-    width: 10px;
-    height: 20px;
-  }
+  height: 8px;
+}
 
-  *::-webkit-scrollbar-track {
-    background:#1f1f1f;
-    border-radius: 10px;
-  }
+*::-webkit-scrollbar-track {
+  background-color: rgba(248, 248, 248, 0.35);
+  border-radius: 10px;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #2f2f2f;
-    border-radius: 10px;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(248, 248, 248, 0.77);
+  border-radius: 10px;
+}
 
   .cal-grid {
     display: flex;
@@ -394,4 +397,96 @@ import ContactCard from '@/components/ContactCard.vue'
     justify-content: flex-start;
     align-items: center;
   }
+
+
+@media (max-width:650px) {
+
+    #mobile-tags{
+  display: unset;
+  margin-top: 2%;
+  }
+
+
+    .club{
+  margin:0
+   }  
+
+    .club-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    }
+
+  
+
+   .club-info-text{
+      margin-left: 0px;
+   }
+
+
+   .club-info {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    }
+
+    .club-subh{
+    text-align:left;  
+    font-size: 28px; 
+    }
+
+    .club-title{
+    font-size: 23px;
+    }
+
+    .status-pill{
+    font-size: 15px;
+    margin-top: 10%;
+    }
+
+    .tags-section {
+    margin-top: 4%;
+    }
+
+    .tag {
+    font-size: 12px;
+    }
+
+
+    .club-text {
+    width: 88vw;
+    padding-left: 32px;
+    }
+
+
+    .media-slider, #media{padding-right: 20px;
+    padding-left: 32px;
+    }
+
+ 
+    .club-p { 
+    font-size: 15px;
+    padding-right:20px;
+  }
+
+
+    .cal-grid{
+    justify-content: flex-start;
+    margin-left: 20px;
+    }
+
+    .contact-grid {
+    justify-content: flex-start;
+      margin-left: 20%;
+    }
+
+    #desktop-tags{
+   display: none;
+    }
+
+  }
+
 </style>

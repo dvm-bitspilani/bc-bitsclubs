@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="hero-image" />
+    <div class="hero-image"></div>
     
     <div class="club-grid">
       <div 
@@ -78,7 +78,7 @@ export default {
         {
           id: 5,
           imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
+          name: "ACM",
           type: "club",
           tag1: "FRONTEND DEVELOPMENT",
           tag2: "UI/UX DESIGN",
@@ -118,6 +118,9 @@ export default {
     background: #2F2F2F;
     margin: 20px 60px 20px 60px;
     border-radius: 20px;
+    background-image: url(../assets/bits-image.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   .club-grid {
@@ -132,5 +135,18 @@ export default {
   .media-slider {
     overflow-x: scroll;
   }
+
+
+
+@media (max-width: 650px){
+
+  .hero-image{
+    width: 85vw;
+    height: 280px;  
+  }
+}
+
+
+
 
 </style>

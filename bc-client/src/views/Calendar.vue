@@ -111,6 +111,7 @@ import CalendarItem from '@/components/CalendarItem.vue'
         justify-content: flex-start;
         align-items: center;
         margin-left: -15px;
+     
     }
     .cal-subh {
         font-size: 24px;
@@ -122,5 +123,23 @@ import CalendarItem from '@/components/CalendarItem.vue'
         color: white;
         font-weight: 500;
         padding: 30px 0 30px 0;
+    }
+
+
+
+
+
+    @media (max-width:650px) {
+
+  
+    .cal-header{
+    font-size: 25px;
+     }
+
+    .cal-grid{
+    margin-left: 0px;
+    justify-content:space-around
+     }
+
     }
 </style> 
