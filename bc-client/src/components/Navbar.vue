@@ -53,7 +53,7 @@
                             active-class="nav-active"
                             class="logo-text"
                             to="/about" exact
-                        >About</router-link>
+                        >about</router-link>
                     </li>
                  </ul>
             </div>
@@ -182,7 +182,7 @@
 
    .hamburger{
        display: none;
-    margin-left: 18%;
+    margin-left: 29%;
 
         }
 
@@ -203,6 +203,7 @@
     cursor: pointer;
     
 }
+
 .container ul.toggle li{
     position: absolute;
     transform: translateY(-50%);
@@ -210,6 +211,7 @@
     list-style: none;
     background: #fff;
     transition: 0.9s;
+    margin-left: -32px;
 }
 .container ul.toggle li:nth-of-type(1){
     top: 20%;
