@@ -261,27 +261,37 @@ import ContactCard from '@/components/ContactCard.vue'
 }
 
  .club {
-    margin: 40px 60px 40px 60px;
+    margin: 40px 60px 40px 70px;
   }
+
   .club-header, .club-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
   }
+
   .club-logo {
     height: 120px;
     width: 120px;
     border-radius: 15px;
-    
-  }
+box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
+-webkit-box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
+-moz-box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
+    }
   
+
   .club-info-text {
     margin-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin-top: -8px;
+
   }
+
+
   .tags-section {
     display: flex;
     margin-left: -5px;
@@ -289,7 +299,9 @@ import ContactCard from '@/components/ContactCard.vue'
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
+   
   }
+
   .tag {
     margin: 5px 3px 5px 3px;
     padding: 3px 13px 3px 13px;
@@ -301,12 +313,15 @@ import ContactCard from '@/components/ContactCard.vue'
     display: inline-block;
     font-weight: 500;
   }
+  
   .club-title {
-    font-size: 48px;
+    font-size: 46px;
     margin: 0;
     padding: 0;
     color: white;
+    letter-spacing: 1.3px;
   }
+
   .club-status {
   
     justify-content: center;
@@ -315,7 +330,7 @@ import ContactCard from '@/components/ContactCard.vue'
     
   }
   .status-pill {
-    margin: 10px 6px 10px 6px;
+    margin: 0px 6px 0px 6px;
     padding: 6px 20px 6px 20px;
     background: #616161;
     color:white;
@@ -349,7 +364,8 @@ import ContactCard from '@/components/ContactCard.vue'
     padding: 0;
     color: white;
     text-align: left;
-    font-size: 28px;
+    font-size: 30px;
+    letter-spacing: 0.8px;
   }
   .club-p {
     margin: 0px 0 10px 0;
@@ -387,7 +403,7 @@ import ContactCard from '@/components/ContactCard.vue'
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    margin-left: -15px;
+    margin-left: -10px;
   }
 
   .contact-grid {
@@ -403,35 +419,36 @@ import ContactCard from '@/components/ContactCard.vue'
 
     #mobile-tags{
   display: unset;
-  margin-top: 2%;
+  
   }
 
 
     .club{
-  margin:0
+  margin: 0px;
    }  
 
     .club-header{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
-
-    }
+   }
 
   
 
    .club-info-text{
-      margin-left: 0px;
+   align-items: center;
+      padding: 10px 0;
+     margin-left: 0px;
    }
 
 
    .club-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:center;
-    flex-wrap: wrap;
-    }
+  
+   
+     }
 
     .club-subh{
     text-align:left;  
@@ -439,16 +456,18 @@ import ContactCard from '@/components/ContactCard.vue'
     }
 
     .club-title{
-    font-size: 23px;
+    font-size: 5.5vw;
+    text-align: center;
     }
 
     .status-pill{
     font-size: 15px;
-    margin-top: 10%;
+text-align: center;
+   
     }
 
     .tags-section {
-    margin-top: 4%;
+    padding-top: 14px;
     }
 
     .tag {
@@ -486,6 +505,7 @@ import ContactCard from '@/components/ContactCard.vue'
     #desktop-tags{
    display: none;
     }
+
 
   }
 

@@ -73,6 +73,7 @@
         justify-content: flex-start;
         cursor: pointer;
         transition: transform 300ms;
+        box-shadow: 7px 6px 20px -4px rgb(0 0 0 / 75%);
     }
 
     .club-item:hover {
@@ -97,20 +98,24 @@
         text-align: left;
         color: white;
         font-weight: 500;
-        font-size: 30px;
+        font-size: 28px;
+        letter-spacing: 0.6px;
     }
 
+
+
     .club-type {
-        margin: 88px 0px;
+        margin: 10px 0;
         padding: 3px 13px 3px 13px;
         background: #1f1f1f;
         color:#ffffff;
         border-radius: 25px;
-        font-size: 18px;
+        font-size: 15px;
         text-transform: uppercase;
         display: inline-block;
-        position: absolute;
+       font-weight:500;
     }
+
     #dep-pill {
         background: #8F1D14;
     }
@@ -123,20 +128,24 @@
     #assoc-pill {
         background: rgb(9, 120, 9);
     }
+
     .title-text {
         display: flex;
         margin-left: 15px;
         flex-direction: column;
         align-items: flex-start;
+        justify-content:center;
+        
     }
 
     .tags-section {
         display: flex;
-        margin-left: 5px;
+        margin: 2px 10px 5px 10px;
         flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
         flex-wrap: wrap;
+        
     }
 
 
@@ -146,29 +155,34 @@
         background: #616161;
         color:white;
         border-radius: 25px;
-        font-size: 16px;
+        font-size: 13px;
         text-transform: uppercase;
         display: inline-block;
-        font-weight: 500;
+        font-weight: 400;
     }
 
+
 @media (max-width: 650px){
+    
     .club-item{
         width: 80vw;
         }
 
     .club-name {
-    font-size: 20px;
+    font-size: 5.1vw;
+    font-weight: 800;
         }
 
     .club-type {
-      font-size: 12px;
+      font-size: 14px;
+       margin-top: 12px;
+     
         }
  
     .tag {
        font-size: 10px;
         }
-
+   
 }
 
 

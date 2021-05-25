@@ -48,6 +48,7 @@
         cursor: pointer;
         transition: transform 300ms;
         padding-left: 20px;
+      box-shadow: 7px 6px 20px -4px rgb(0 0 0 / 75%);
     }
 
 
@@ -57,16 +58,17 @@
     .title-section {
         display: flex;
         flex-direction: row;
-        margin: 10px 10px 0px 10px;
+        margin: 10px 10px 0px 5px;
         height: 50%;
     }
     
     .cal-logo {
-        height: 100px;
-        width: 100px;
+        height: 106px;
+        width: 106px;
         margin-top: 5px;
         border-radius: 10px;
     }
+
 
     .cal-name {
         margin: 0;
@@ -74,20 +76,21 @@
         text-align: left;
         color: white;
         font-weight: 500;
-        font-size: 22px;
+        font-size: 23px;
+        letter-spacing: 0.5px;
     }
 
     .cal-date, .cal-link {
-        margin: 0px 0px;
-        padding: 0;
+        margin:0;
+        padding: 0px;
         text-align: left;
         color: white;
-        font-weight: 500;
-        font-size: 18px;
+        font-weight: 400;
+        font-size: 16px;
     }
-    
+
     .cal-link {
-        color: blue;
+        color: #7db7da;
     }
 
     .title-text {
@@ -106,6 +109,8 @@
         text-align: left;
         flex-wrap: wrap;
         color: white;
+        line-height: 1.45;
+        font-size: 15px;
     }
 
 
@@ -120,20 +125,20 @@
 
 
     .cal-name {
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 800;
     }
 
     .cal-date, .cal-link { 
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 500;
+        padding:1.8px ;
     }
     
 
     .cal-description { 
         font-size: 14px;
     }
-
-
-
 
 
 

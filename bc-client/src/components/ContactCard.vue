@@ -38,6 +38,7 @@ export default {
         justify-content: center;
         align-items: center;
         margin-top: 12%;
+         box-shadow: 7px 6px 20px -4px rgb(0 0 0 / 75%);
        
     }
  

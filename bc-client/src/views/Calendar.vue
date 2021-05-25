@@ -117,12 +117,14 @@ import CalendarItem from '@/components/CalendarItem.vue'
         font-size: 24px;
         color: white;
         text-align: left;
+        letter-spacing: 0.4px;
     }
     .cal-header{
-        font-size: 32px;
+        font-size: 34px;
         color: white;
         font-weight: 500;
         padding: 30px 0 30px 0;
+        letter-spacing: 0.8px;
     }
 
 
@@ -133,7 +135,7 @@ import CalendarItem from '@/components/CalendarItem.vue'
 
   
     .cal-header{
-    font-size: 25px;
+    font-size: 7vw;
      }
 
     .cal-grid{

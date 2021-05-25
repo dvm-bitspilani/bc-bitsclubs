@@ -13,7 +13,7 @@
                     to="/" exact
             >bits clubs</router-link>
 
-      <div class="hamburger">
+     <div class="hamburger">
 
 <div class="container">
            
@@ -22,47 +22,14 @@
                 <li></li>
                 <li></li>
             </ul>
-            <div class="sidebar">
-                 <ul class="menu">
-                     <li>
-                        <router-link 
-                            active-class="nav-active"
-                            class="logo-text"
-                            to="/club" exact
-                        >club</router-link>
-                    </li>
-
-                    <li>   
-                        <router-link 
-                            active-class="nav-active"
-                            class="logo-text"
-                            to="/search" exact
-                        >search</router-link>
-                    </li>
-
-                    <li>
-                        <router-link 
-                            active-class="nav-active"
-                            class="logo-text"
-                            to="/calendar" exact
-                        >calendar</router-link>
-                    </li>
-                    
-                    <li>
-                        <router-link 
-                            active-class="nav-active"
-                            class="logo-text"
-                            to="/about" exact
-                        >about</router-link>
-                    </li>
-                 </ul>
+            
             </div>
         </div>
 
+
         </div>
     
-</div>
-
+ 
         <div class="nav-menu">
     
 
@@ -98,10 +65,6 @@
             </div>
         </div>
 
-
-
-
-
     </div>
 </template>
 
@@ -114,15 +77,13 @@
  $(document).ready(function(){
                 $('.container ul.toggle').click(function(){
                     $(this).toggleClass('active');
-                    $('.container .sidebar').toggleClass('active');
+                    $('.nav-menu').toggleClass('active');
                      $('body').toggleClass('hide'); 
                 })
 
-
-
-                $(".sidebar li").click(function(){
+                $(".nav-item").click(function(){
      $('.container ul.toggle').toggleClass('active');
-      $('.container .sidebar').toggleClass('active');
+      $('.nav-menu').toggleClass('active');
      $('body').toggleClass('hide'); 
 
    
@@ -136,7 +97,6 @@
 </script>
 
 <style scoped>
-
 
 
     .invisible {
@@ -190,7 +150,6 @@
 .container{
   width: 80%;
 
- 
 }
 
 
@@ -238,46 +197,6 @@
 }
 
 
-.container .sidebar{
-    position: absolute;
-    top: 0;  left: -400px;
-    background: #262626;
-    width: 96vw;   height: 100vh;
-    box-sizing: border-box;
-    padding: 80px 40px;
-    text-align: center;
-    transition: .9s;
-    z-index: 4;
-}
-
-
-.container .sidebar.active{
-    left: 0;
-    overflow: hidden;
-
-}
-
-
-
-.container .sidebar ul.menu{
-    position: relative;
-    text-align: center;
-    width: 100%;
-    margin-top: 20px;
-}
-.container .sidebar ul.menu li{
-    list-style: none;
-}
-.container .sidebar ul.menu li a{
-    display: inline-block;
-    position: relative;
-    color: #fff;
-    width: 100%;  padding: 10px 0;
-    box-sizing: border-box;
-    font-size: 20px;
-}
-
-
     @media screen and (max-width: 650px){
        
 
@@ -289,13 +208,45 @@
             margin: 30px 20px 0px 23px;
         }
 
-        .hamburger{
+   .hamburger{
     display: unset;
 }
+
+
 .nav-menu{
-    display: none;
+
+   flex-direction: column;
+   position: absolute;
+   left: 600px;
+   top: 0;  
+    background: #262626;
+    width: 0;  
+     height: 100vh;
+    box-sizing: border-box;
+    padding: 200px 0px;
+    text-align: center;
+    z-index: 4;
+    transition: 1s ease-in;
+    overflow-x: hidden ;
+
+
 }
 
+.nav-menu.active{ 
+   width: 95vw;
+    overflow: hidden;
+    left: 25px;
+    
+}
+
+
+
+
+
+.nav-item{
+padding: 20px;
+
+ }
 
 
 .logo-text{
@@ -310,15 +261,8 @@
 
 
 
-
-
-
-
-
-
-
-
      @media screen and (min-width: 650px){
+
         .navbar-root {
             display: flex;
             flex-direction: row;
