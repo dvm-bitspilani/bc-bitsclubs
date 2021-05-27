@@ -75,11 +75,6 @@
       "repeatable": false,
       "component": "contact.contact"
     },
-    "clubTags": {
-      "type": "component",
-      "repeatable": false,
-      "component": "club-tags.club-tags"
-    },
     "clubType": {
       "type": "enumeration",
       "enum": [
@@ -89,17 +84,26 @@
         "assoc"
       ]
     },
+    "events": {
+      "collection": "event",
+      "via": "club"
+    },
     "recruitmentProcess": {
-      "type": "text"
+      "type": "richtext"
     },
     "about": {
-      "type": "text"
+      "type": "richtext"
     },
     "perks": {
-      "type": "text"
+      "type": "richtext"
     },
     "faq": {
-      "type": "string"
+      "type": "richtext"
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "clubs",
+      "dominant": true
     }
   }
 }

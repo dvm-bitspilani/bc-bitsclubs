@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/events": {
+    "/tags": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/Tag"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Event"
+          "Tag"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Event"
+                  "$ref": "#/components/schemas/Tag"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Event"
+          "Tag"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEvent"
+                "$ref": "#/components/schemas/NewTag"
               }
             }
           }
         }
       }
     },
-    "/events/count": {
+    "/tags/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Event"
+          "Tag"
         ],
         "parameters": []
       }
     },
-    "/events/{id}": {
+    "/tags/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Event"
+                  "$ref": "#/components/schemas/Tag"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Event"
+          "Tag"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Event"
+                  "$ref": "#/components/schemas/Tag"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Event"
+          "Tag"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEvent"
+                "$ref": "#/components/schemas/NewTag"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Event"
+          "Tag"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Event": {
+      "Tag": {
         "required": [
           "id"
         ],
@@ -522,174 +522,100 @@
           "id": {
             "type": "string"
           },
-          "eventName": {
+          "TagTitle": {
             "type": "string"
           },
-          "dateTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "link": {
+          "TagDescription": {
             "type": "string"
           },
-          "clubName": {
-            "type": "string"
-          },
-          "eventDescription": {
-            "type": "string"
-          },
-          "featureImage": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "club": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "portfolio": {
-                "type": "array",
-                "items": {
+          "clubs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "portfolio": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "gallery": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "recruitmentForm": {
+                  "type": "string"
+                },
+                "isRecruiting": {
+                  "type": "boolean"
+                },
+                "contactEmail": {
+                  "type": "string"
+                },
+                "contact1": {
+                  "type": "component"
+                },
+                "contact2": {
+                  "type": "component"
+                },
+                "contact3": {
+                  "type": "component"
+                },
+                "clubType": {
+                  "type": "string",
+                  "enum": [
+                    "department",
+                    "club",
+                    "techTeam",
+                    "assoc"
+                  ]
+                },
+                "events": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recruitmentProcess": {
+                  "type": "string"
+                },
+                "about": {
+                  "type": "string"
+                },
+                "perks": {
+                  "type": "string"
+                },
+                "faq": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "gallery": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "logo": {
-                "type": "string"
-              },
-              "recruitmentForm": {
-                "type": "string"
-              },
-              "isRecruiting": {
-                "type": "boolean"
-              },
-              "contactEmail": {
-                "type": "string"
-              },
-              "contact1": {
-                "type": "component"
-              },
-              "contact2": {
-                "type": "component"
-              },
-              "contact3": {
-                "type": "component"
-              },
-              "clubType": {
-                "type": "string",
-                "enum": [
-                  "department",
-                  "club",
-                  "techTeam",
-                  "assoc"
-                ]
-              },
-              "events": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "recruitmentProcess": {
-                "type": "string"
-              },
-              "about": {
-                "type": "string"
-              },
-              "perks": {
-                "type": "string"
-              },
-              "faq": {
-                "type": "string"
-              },
-              "tags": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -699,26 +625,19 @@
           }
         }
       },
-      "NewEvent": {
+      "NewTag": {
         "properties": {
-          "eventName": {
+          "TagTitle": {
             "type": "string"
           },
-          "dateTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "link": {
+          "TagDescription": {
             "type": "string"
           },
-          "clubName": {
-            "type": "string"
-          },
-          "eventDescription": {
-            "type": "string"
-          },
-          "club": {
-            "type": "string"
+          "clubs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -736,7 +655,7 @@
   },
   "tags": [
     {
-      "name": "Event"
+      "name": "Tag"
     }
   ]
 }

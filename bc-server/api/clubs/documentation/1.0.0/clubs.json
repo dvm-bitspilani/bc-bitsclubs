@@ -665,9 +665,6 @@
               }
             }
           },
-          "recruitmentProcess": {
-            "type": "string"
-          },
           "logo": {
             "required": [
               "id",
@@ -735,15 +732,6 @@
               }
             }
           },
-          "about": {
-            "type": "string"
-          },
-          "perks": {
-            "type": "string"
-          },
-          "faq": {
-            "type": "string"
-          },
           "recruitmentForm": {
             "type": "string"
           },
@@ -1014,32 +1002,6 @@
               }
             }
           },
-          "clubTags": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "tag1": {
-                "type": "string"
-              },
-              "tag2": {
-                "type": "string"
-              },
-              "tag3": {
-                "type": "string"
-              },
-              "tag4": {
-                "type": "string"
-              },
-              "tag5": {
-                "type": "string"
-              }
-            }
-          },
           "clubType": {
             "type": "string",
             "enum": [
@@ -1049,16 +1011,48 @@
               "assoc"
             ]
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewClubs": {
-        "properties": {
-          "name": {
-            "type": "string"
+          "events": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "eventName": {
+                  "type": "string"
+                },
+                "dateTime": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "clubName": {
+                  "type": "string"
+                },
+                "eventDescription": {
+                  "type": "string"
+                },
+                "featureImage": {
+                  "type": "string"
+                },
+                "club": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "recruitmentProcess": {
             "type": "string"
@@ -1072,6 +1066,51 @@
           "faq": {
             "type": "string"
           },
+          "tags": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "TagTitle": {
+                  "type": "string"
+                },
+                "TagDescription": {
+                  "type": "string"
+                },
+                "clubs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewClubs": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
           "recruitmentForm": {
             "type": "string"
           },
@@ -1342,32 +1381,6 @@
               }
             }
           },
-          "clubTags": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "tag1": {
-                "type": "string"
-              },
-              "tag2": {
-                "type": "string"
-              },
-              "tag3": {
-                "type": "string"
-              },
-              "tag4": {
-                "type": "string"
-              },
-              "tag5": {
-                "type": "string"
-              }
-            }
-          },
           "clubType": {
             "type": "string",
             "enum": [
@@ -1376,6 +1389,30 @@
               "techTeam",
               "assoc"
             ]
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recruitmentProcess": {
+            "type": "string"
+          },
+          "about": {
+            "type": "string"
+          },
+          "perks": {
+            "type": "string"
+          },
+          "faq": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

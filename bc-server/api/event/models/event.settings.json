@@ -37,6 +37,10 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "club": {
+      "via": "events",
+      "model": "clubs"
     }
   }
 }
