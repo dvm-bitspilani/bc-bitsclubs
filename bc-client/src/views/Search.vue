@@ -4,20 +4,28 @@
       type="text"
       class="search-bar"
       placeholder="Search for any interest, department, or club"
-      v-model="search"
+      v-model="search_param"
+      v-on:keyup.enter="callMeMaybe(search_param)"
+      v-on:submit="callMeMaybe(search_param)"
   > 
 
 
-    <br />
+    <br/>
     
     <div class="club-grid">
       <div v-for="clubitem in clubs" :key="clubitem.id">
+         <router-link 
+          :to="{ path: '/club/'+clubitem.id}"
+          class="router-link-style"
+          >
         <ClubItem
+          :id="clubitem.id"
           :imgSrc="clubitem.logo.name"
           :name="clubitem.name"
           :type="clubitem.clubType"
           :tags="clubitem.tags"
         />
+         </router-link>
       </div>
     </div>
   </div>
@@ -34,40 +42,28 @@ export default {
   },
   data() {
     return {
+      renderComponent: true,
      	clubs: [],
-   error: null,
-   search:""
- 
-   
+      error: null,
+      search:"",
     }
-    }, 
-  
-
-     async mounted () {
-    try {
-      const response = await axios.get('http://localhost:1337/clubs')
-      this.clubs = response.data
-      console.log(this.clubs)
-
-
- const query = qs.stringify({
-  _contains: [{ name: search}],
-});
-
-await request(`?${query}`);
-console.log(query)
-
-
-    } catch (error) {
-      this.error = error;
+  }, 
+  mounted: function mounted () {
+        this.getAllData();
+  },
+  methods: {
+    callMeMaybe(search_param) {
+      this.search = search_param;
+      this.getAllData();
+      console.log(search_param)
+    },
+    getAllData() {
+        return axios.get('http://localhost:1337/clubs?name_contains='+this.search).then((response)=> {
+          this.clubs = response.data
+          console.log(this.clubs)
+        })
     }
-
-
-
   }
-
- 
-
 }
 
 </script>
@@ -124,5 +120,10 @@ input {
     font-size: 14px;
   }
 
+}
+
+.router-link-style {
+  color: inherit;
+  text-decoration: none; /* no underline */
 }
 </style>
