@@ -32,7 +32,7 @@ const routes = [
     }
   },
   {
-    path: '/club',
+    path: '/club/:id',
     name: 'Club',
     component: function () {
       return import('../views/Club.vue')

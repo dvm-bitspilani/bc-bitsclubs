@@ -5,14 +5,14 @@
       <div class="club-info">
       <div class="clublogo"><img 
           class="club-logo"
-          :src="clubs[0].logo" 
+          :src="club.logo" 
           alt=""
         ></div>  
 
         <div class="club-info-text">
-          <h1 class="club-title">{{ clubs[0].name }}</h1>
+          <h1 class="club-title">{{ club.name }}</h1>
           <div class="tags-section" id="desktop-tags">
-                <div v-for="tag in clubs[0].tags" :key="tag.id"> 
+                <div v-for="tag in club.tags" :key="tag.id"> 
           <AllTags :name="tag.TagTitle"/>
             </div>
           </div>
@@ -21,12 +21,12 @@
         
       </div>
        <div class="club-status">
-        <h1 id="recr-true" class="status-pill" v-if="clubs[0].isRecruiting">RECRUITING</h1>
+        <h1 id="recr-true" class="status-pill" v-if="club.isRecruiting">RECRUITING</h1>
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
 
          <div class="tags-section" id="mobile-tags">
-           <div v-for="tag in clubs[0].tags" :key="tag.id"> 
+           <div v-for="tag in club.tags" :key="tag.id"> 
           <AllTags :name="tag.TagTitle"/>
             </div>
             
@@ -39,14 +39,14 @@
 
     <div class="club-text">
       <h2 class="club-subh">About Us</h2>
-      <p class="club-p">{{ clubs[0].about }}</p>
+      <p class="club-p">{{ club.about }}</p>
     </div>
 
     <div class="club-calendar">
       <h2 class="club-subh" id="media">Upcoming Events</h2>
       <div class="cal-grid">
         <div 
-          v-for="calItem in clubs[0].events"
+          v-for="calItem in club.events"
           :key="calItem.id"
         >
           <CalendarItem 
@@ -65,7 +65,7 @@
       <h2 class="club-subh" id="media">Portfolio and Past Work</h2>
       <div class="media-slider">
         <div 
-        v-for="item in clubs[0].portfolio"
+        v-for="item in club.portfolio"
         :key="item.id"
         >
           <Feature
@@ -76,22 +76,21 @@
 
     <div class="club-text">
       <h2 class="club-subh">Perks of Applying</h2>
-      <p class="club-p">{{ clubs[0].perks }}</p>
+      <p class="club-p">{{ club.perks }}</p>
     </div>
 
     <div class="recruitment">
       <div class="club-text">
         <h2 class="club-subh">Recruitment Process</h2>
-        <p class="club-p">{{ clubs[0].recruitmentProcess }}</p>
+        <p class="club-p">{{ club.recruitmentProcess }}</p>
       </div>
-       <!-- <div class="info-form">{{ clubs[0].form }}</div> -->
     </div> 
 
     <div>
       <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
         <div 
-        v-for="item in clubs[0].portfolio"
+        v-for="item in club.portfolio"
         :key="item.id"
         >
           <Feature
@@ -102,7 +101,7 @@
 
     <div class="club-text">
       <h2 class="club-subh">Frequently Asked Questions</h2>
-       <p class="club-p">{{ clubs[0].perks }}</p>
+       <p class="club-p">{{ club.perks }}</p>
     </div>   
 
     <div class="club-contact">
@@ -110,26 +109,26 @@
        <div class="contact-grid">
         <div >
           <ContactCard
-            :imgSrc="clubs[0].contact1.profilePicture[0].url"
-            :name="clubs[0].contact1.name"
-            :designation="clubs[0].contact1.designation"
-            :email="clubs[0].contactEmail"
+            :imgSrc="club.contact1.profilePicture[0].url"
+            :name="club.contact1.name"
+            :designation="club.contact1.designation"
+            :email="club.contactEmail"
           />
 </div>
    <div >
           <ContactCard
-            :imgSrc="clubs[0].contact2.profilePicture[0].url"
-            :name="clubs[0].contact2.name"
-            :designation="clubs[0].contact2.designation"
-            :email="clubs[0].contactEmail"
+            :imgSrc="club.contact2.profilePicture[0].url"
+            :name="club.contact2.name"
+            :designation="club.contact2.designation"
+            :email="club.contactEmail"
           />
 </div>
    <div >
           <ContactCard
-            :imgSrc="clubs[0].contact3.profilePicture[0].url"
-            :name="clubs[0].contact3.name"
-            :designation="clubs[0].contact3.designation"
-            :email="clubs[0].contactEmail"
+            :imgSrc="club.contact3.profilePicture[0].url"
+            :name="club.contact3.name"
+            :designation="club.contact3.designation"
+            :email="club.contactEmail"
           />
 </div>
 
@@ -160,14 +159,15 @@ import AllTags from '@/components/AllTags.vue'
     }, 
     data() {
       return {
-        clubs: [],
-         error: null,
+        id: this.$route.params.id,
+        club: [],
+        error: null,
     }
   },
   async mounted () {
     try {
-      const response = await axios.get('http://localhost:1337/clubs')
-      this.clubs = response.data
+      const response = await axios.get('http://localhost:1337/clubs/'+this.id)
+      this.club = response.data
     } catch (error) {
       this.error = error;
       }
