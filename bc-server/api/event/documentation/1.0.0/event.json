@@ -525,9 +525,9 @@
           "eventName": {
             "type": "string"
           },
-          "dateTime": {
+          "date": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "link": {
             "type": "string"
@@ -693,6 +693,9 @@
               }
             }
           },
+          "time": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -704,9 +707,9 @@
           "eventName": {
             "type": "string"
           },
-          "dateTime": {
+          "date": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "link": {
             "type": "string"
@@ -718,6 +721,9 @@
             "type": "string"
           },
           "club": {
+            "type": "string"
+          },
+          "time": {
             "type": "string"
           },
           "published_at": {

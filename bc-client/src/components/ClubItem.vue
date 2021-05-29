@@ -29,21 +29,31 @@
                 >{{ type }}</h2>
 
             </div>
-        </div>
-        <div class="tags-section">
-            <h2 class="tag">{{ tag1 }}</h2>
-            <h2 class="tag">{{ tag2 }}</h2>
-            <h2 class="tag">{{ tag3 }}</h2>
-            <h2 class="tag">{{ tag4 }}</h2>
-        </div>
-    </div>
 
+
+
+        </div>
+
+
+   <div class="tags-section">
+           
+          <div v-for="tag in clubitem.tags" :key="tag.id"> 
+          <AllTags :name="tag.TagTitle"/>
+          </div>
+         </div>
+  </div>
+    
 </template>
 
 
 <script>
+import AllTags from '@/components/AllTags.vue'
+import axios from 'axios'
     export default {
         name: 'ClubItem',
+        components : {
+            AllTags
+            },
         props: [
             "imgSrc",
             "name", 
@@ -53,8 +63,25 @@
             "tag3", 
             "tag4", 
             "tag5", 
+            
         ],
+
+data() {
+		return {
+			clubs: [],
+          error: null,
     }
+  },
+  async mounted () {
+    try {
+      const response = await axios.get('http://localhost:1337/clubs')
+      this.clubs = response.data
+      
+    } catch (error) {
+      this.error = error;
+    }
+  }
+ }
 </script>
 
 
@@ -148,18 +175,6 @@
         
     }
 
-
-    .tag {
-        margin: 5px 3px 5px 3px;
-        padding: 3px 13px 3px 13px;
-        background: #616161;
-        color:white;
-        border-radius: 25px;
-        font-size: 13px;
-        text-transform: uppercase;
-        display: inline-block;
-        font-weight: 400;
-    }
 
 
 @media (max-width: 650px){

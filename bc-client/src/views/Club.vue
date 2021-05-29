@@ -5,30 +5,31 @@
       <div class="club-info">
       <div class="clublogo"><img 
           class="club-logo"
-          :src="response[0].imgSrc" 
+          :src="clubs[0].logo" 
           alt=""
         ></div>  
 
         <div class="club-info-text">
-          <h1 class="club-title">{{ response[0].name }}</h1>
+          <h1 class="club-title">{{ clubs[0].name }}</h1>
           <div class="tags-section" id="desktop-tags">
-              <h2 class="tag">{{ response[0].tag1 }}</h2>
-              <h2 class="tag">{{ response[0].tag2 }}</h2>
-              <h2 class="tag">{{ response[0].tag3 }}</h2>
+                <div v-for="tag in clubs[0].tags" :key="tag.id"> 
+          <AllTags :name="tag.TagTitle"/>
+            </div>
           </div>
 
         </div>
         
       </div>
        <div class="club-status">
-        <h1 id="recr-true" class="status-pill" v-if="response[0].isRecruiting">RECRUITING</h1>
+        <h1 id="recr-true" class="status-pill" v-if="clubs[0].isRecruiting">RECRUITING</h1>
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
 
          <div class="tags-section" id="mobile-tags">
-              <h2 class="tag">{{ response[0].tag1 }}</h2>
-              <h2 class="tag">{{ response[0].tag2 }}</h2>
-              <h2 class="tag">{{ response[0].tag3 }}</h2>
+           <div v-for="tag in clubs[0].tags" :key="tag.id"> 
+          <AllTags :name="tag.TagTitle"/>
+            </div>
+            
           </div>
         </div>
 
@@ -38,14 +39,14 @@
 
     <div class="club-text">
       <h2 class="club-subh">About Us</h2>
-      <p class="club-p">{{ response[0].about }}</p>
+      <p class="club-p">{{ clubs[0].about }}</p>
     </div>
 
     <div class="club-calendar">
       <h2 class="club-subh" id="media">Upcoming Events</h2>
       <div class="cal-grid">
         <div 
-          v-for="calItem in response[0].calendar"
+          v-for="calItem in clubs[0].events"
           :key="calItem.id"
         >
           <CalendarItem 
@@ -53,7 +54,7 @@
             :eventName="calItem.eventName"
             :date="calItem.date"
             :link="calItem.link"
-            :description="calItem.description"
+            :description="calItem.eventDescription"
           />
         </div>
       </div>
@@ -64,60 +65,79 @@
       <h2 class="club-subh" id="media">Portfolio and Past Work</h2>
       <div class="media-slider">
         <div 
-        v-for="item in response[0].portfolio"
+        v-for="item in clubs[0].portfolio"
         :key="item.id"
         >
           <Feature
-            :imgSrc="item.imgSrc" />
+            :imgSrc="item.url" />
         </div>
       </div>
     </div>
 
     <div class="club-text">
       <h2 class="club-subh">Perks of Applying</h2>
-      <p class="club-p">{{ response[0].perks }}</p>
+      <p class="club-p">{{ clubs[0].perks }}</p>
     </div>
 
     <div class="recruitment">
       <div class="club-text">
         <h2 class="club-subh">Recruitment Process</h2>
-        <p class="club-p">{{ response[0].recruitment }}</p>
+        <p class="club-p">{{ clubs[0].recruitmentProcess }}</p>
       </div>
-       <!-- <div class="info-form">{{ response[0].form }}</div> -->
+       <!-- <div class="info-form">{{ clubs[0].form }}</div> -->
     </div> 
 
     <div>
       <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
         <div 
-        v-for="item in response[0].portfolio"
+        v-for="item in clubs[0].portfolio"
         :key="item.id"
         >
           <Feature
-            :imgSrc="item.imgSrc" />
+            :imgSrc="item.url" />
         </div>
       </div>
     </div>
 
     <div class="club-text">
       <h2 class="club-subh">Frequently Asked Questions</h2>
-       <p class="club-p">{{ response[0].perks }}</p>
+       <p class="club-p">{{ clubs[0].perks }}</p>
     </div>   
 
     <div class="club-contact">
       <h2 class="club-subh" id="media">Contact Us</h2>
        <div class="contact-grid">
-        <div 
-        v-for="contact in response[0].contact"
-        :key="contact.id"
-        >
+        <div >
           <ContactCard
-            :imgSrc="contact.imgSrc"
-            :name="contact.name"
-            :designation="contact.designation"
-            :email="contact.email"
+            :imgSrc="clubs[0].contact1.profilePicture[0].url"
+            :name="clubs[0].contact1.name"
+            :designation="clubs[0].contact1.designation"
+            :email="clubs[0].contactEmail"
           />
-        </div>
+</div>
+   <div >
+          <ContactCard
+            :imgSrc="clubs[0].contact2.profilePicture[0].url"
+            :name="clubs[0].contact2.name"
+            :designation="clubs[0].contact2.designation"
+            :email="clubs[0].contactEmail"
+          />
+</div>
+   <div >
+          <ContactCard
+            :imgSrc="clubs[0].contact3.profilePicture[0].url"
+            :name="clubs[0].contact3.name"
+            :designation="clubs[0].contact3.designation"
+            :email="clubs[0].contactEmail"
+          />
+</div>
+
+
+
+
+
+
       </div>
     </div>   
 
@@ -128,127 +148,28 @@
 import Feature from '@/components/Feature.vue'
 import CalendarItem from '@/components/CalendarItem.vue'
 import ContactCard from '@/components/ContactCard.vue'
+import axios from 'axios'
+import AllTags from '@/components/AllTags.vue'
   export default {
     name: 'Club',
     components: {
       Feature,
       CalendarItem,
       ContactCard,
+      AllTags
     }, 
     data() {
       return {
-        response: [
-          {
-            id: 1,
-            imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-            name: "Department of Visual Media",
-            type: "department",
-            about: "DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. We are responsible for the official app and websites. DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. We are responsible for the official app and websites.  DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests.",
-            isRecruiting: true,
-            tag1: "FRONTEND DEVELOPMENT",
-            tag2: "UI/UX DESIGN",
-            tag3: "BACKEND DEVELOPMENT",
-            tag4: "VIDEO EDITING",
-            perks: "DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. We are responsible for the official app and websites. DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. We are responsible for the official app and websites.  DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. ",
-            recruitment: "DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. We are responsible for the official app and websites. DVM is BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. BITS Pilani’s department in-charge of all technical, website, design, animation, and video related for the Oasis and Apogee fests. ",
-            form: "https://forms.google.com/",
-            faq: "",
-            contact: [
-              {
-                id: 1,
-                name: "Parth Sharma",
-                designation: "Frontend Developer",
-               email:"parthop@gmail.com",
-
-                imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
-              },
-              {
-                id: 2,
-                name: "Parth Sharma",
-                designation: "Frontend Developer",
-                                email:"parthop@gmail.com",
-
-                imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
-              },
-              {
-                id: 3,
-                name: "Parth Sharma",
-                designation: "Frontend Developer",
-                                email:"parthop@gmail.com",
-
-                imgSrc: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f47d4de7637290765bce495%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1398%26cropX2%3D3908%26cropY1%3D594%26cropY2%3D3102",
-              },
-            ],
-            portfolio: [
-              {
-                id: 1,
-                imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-              },
-              {
-                id: 2,
-                imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-              },
-              {
-                id: 3,
-                imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-              },
-              {
-                id: 4,
-                imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-              },
-              {
-                id: 5,
-                imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-              },
-              {
-                id: 6,
-                imgSrc: "https://images.unsplash.com/photo-1575405070791-081b3a960ce8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-              },
-            ],
-            calendar: [
-              {
-                id: 1,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 2,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 3,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 4,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 5,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-            ]
-          }
-        ],
+        clubs: [],
+         error: null,
+    }
+  },
+  async mounted () {
+    try {
+      const response = await axios.get('http://localhost:1337/clubs')
+      this.clubs = response.data
+    } catch (error) {
+      this.error = error;
       }
     }
   }
@@ -350,7 +271,7 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
   }
   
   #recr-false {
-    color:rgb(255, 0, 0);
+    background:rgb(255, 0, 0);
     box-shadow: rgba(255, 101, 101, 0.2) 0px 8px 24px;
   }
 

@@ -5,24 +5,22 @@
 
          <div 
             class="calWeekC"
-            v-for="calWeek in response"
-            :key="calWeek.id"
+            v-for=" calItem in events"
+            :key="calItem.date"
         >
             <div class="calendar-block">
-                <h2 class="cal-subh">{{ calWeek.label }}</h2>
+                <h2 class="cal-subh">{{ calItem.date }}</h2>
                 <div class="cal-grid">
-                    <div 
-                        v-for="calItem in calWeek.events"
-                        :key="calItem.id"
-                    >
+                   
                     <CalendarItem 
-                        :imgSrc="calItem.imgSrc"
+                        :imgSrc="calItem.featureImage"
                         :eventName="calItem.eventName"
                         :date="calItem.date"
                         :link="calItem.link"
-                        :description="calItem.description"
+                        :description="calItem.eventDescription"
                     />
-                    </div>
+
+                    
                 </div>
             </div>
         </div>
@@ -31,6 +29,7 @@
 
 <script>
 import CalendarItem from '@/components/CalendarItem.vue'
+import axios from 'axios'
   export default {
     name: 'Calendar',
     components: {
@@ -38,62 +37,18 @@ import CalendarItem from '@/components/CalendarItem.vue'
     }, 
     data() {
       return {
-        response: [
-          {
-              id: 1,
-              label: "11th May, 2021",
-              events: [
-              {
-                id: 1,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 2,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 3,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-            ]
-          },
-          {
-              id: 2,
-              label: "13th May, 2021",
-              events: [
-              {
-                id: 1,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-              {
-                id: 2,
-                eventName: "DVM Airmeet Orientation",
-                imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-                date: "4.00PM, 11/03/2021",
-                link: "bit.ly/dvmorientation",
-                description: "Events calendar (on homepage and clubs page): If any club is organizing a event, they can add it and it will show up on that calendar. ",
-              },
-            ]
-          }
-        ],
-      }
+    	events: [],
+   error: null,
+          } },
+
+  async mounted () {
+    try {
+      const response = await axios.get('http://localhost:1337/events')
+      this.events = response.data
+    } catch (error) {
+      this.error = error;
     }
+  }
   }
 </script>
 

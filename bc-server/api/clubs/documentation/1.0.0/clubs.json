@@ -1024,7 +1024,7 @@
                 "eventName": {
                   "type": "string"
                 },
-                "dateTime": {
+                "date": {
                   "type": "string"
                 },
                 "link": {
@@ -1040,6 +1040,9 @@
                   "type": "string"
                 },
                 "club": {
+                  "type": "string"
+                },
+                "time": {
                   "type": "string"
                 },
                 "published_at": {

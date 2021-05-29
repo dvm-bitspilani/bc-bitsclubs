@@ -4,101 +4,61 @@
     
     <div class="club-grid">
       <div 
-        v-for="clubitem in response"
+        v-for="clubitem in clubs"
         :key="clubitem.id"
       >
+     
         <ClubItem 
-          :imgSrc="clubitem.imgSrc"
+          :imgSrc="clubitem.logo.url"
           :name="clubitem.name"
-          :type="clubitem.type"
-          :tag1="clubitem.tag1"
-          :tag2="clubitem.tag2"
-          :tag3="clubitem.tag3"
-          :tag4="clubitem.tag4"
-        />
-      </div>
+          :type="clubitem.clubType">
+     
+          </ClubItem>
+
+
+           <!-- <div class="tags-section">
+           
+          <div v-for="tag in clubitem.tags" :key="tag.id"> 
+          <AllTags :name="tag.TagTitle"/>
+          </div>
+         </div> -->
+          </div>
+
+
+</div>
     </div>
     
-  </div>
+ 
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
 import ClubItem from '@/components/ClubItem.vue'
-
+import axios from 'axios'
+import AllTags from '@/components/AllTags.vue'
 export default {
   name: 'Home',
   components: {
     Navbar,
     ClubItem,
+    AllTags
   }, 
   data() {
 		return {
-			response: [
-        {
-          id: 1,
-          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
-          type: "department",
-          tag1: "FRONTEND DEVELOPMENT",
-          tag2: "UI/UX DESIGN",
-          tag3: "BACKEND DEVELOPMENT",
-          tag4: "VIDEO EDITING",
-        },
-        {
-          id: 2,
-          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Student Union Tech Team",
-          type: "tech-team",
-          tag1: "FRONTEND DEVELOPMENT",
-          tag2: "UI/UX DESIGN",
-          tag3: "BACKEND DEVELOPMENT",
-          tag4: "VIDEO EDITING",
-        },
-        {
-          id: 3,
-          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Capital One — Delhi Assoc",
-          type: "assoc",
-          tag1: "FRONTEND DEVELOPMENT",
-          tag2: "UI/UX DESIGN",
-          tag3: "BACKEND DEVELOPMENT",
-          tag4: "VIDEO EDITING",
-        },
-        {
-          id: 4,
-          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
-          type: "department",
-          tag1: "FRONTEND DEVELOPMENT",
-          tag2: "UI/UX DESIGN",
-          tag3: "BACKEND DEVELOPMENT",
-          tag4: "VIDEO EDITING",
-        },
-        {
-          id: 5,
-          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "ACM",
-          type: "club",
-          tag1: "FRONTEND DEVELOPMENT",
-          tag2: "UI/UX DESIGN",
-          tag3: "BACKEND DEVELOPMENT",
-          tag4: "VIDEO EDITING",
-        },
-        {
-          id: 6,
-          imgSrc: "https://avatars.githubusercontent.com/u/14038814?s=200&v=4",
-          name: "Department of Visual Media",
-          type: "assoc",
-          tag1: "FRONTEND DEVELOPMENT",
-          tag2: "UI/UX DESIGN",
-          tag3: "BACKEND DEVELOPMENT",
-          tag4: "VIDEO EDITING",
-        },
-      ],
+			clubs: [],
+   error: null,
+    }
+  },
+  async mounted () {
+    try {
+      const response = await axios.get('http://localhost:1337/clubs')
+      this.clubs = response.data
+    } catch (error) {
+      this.error = error;
     }
   }
 }
+
 </script>
 
 <style scoped>
@@ -136,6 +96,15 @@ export default {
     overflow-x: scroll;
   }
 
+ .tags-section {
+        display: flex;
+        margin: 2px 10px 5px 10px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        
+    }
 
 
 @media (max-width: 650px){
