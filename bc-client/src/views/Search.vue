@@ -42,29 +42,22 @@ export default {
       search:"",
     }
   }, 
-  async mounted () {
-    try {
-      const response = await axios.get('http://localhost:1337/clubs?name_contains='+this.search)
-      this.clubs = response.data
-      console.log(this.clubs)
-
-    } catch (error) {
-      this.error = error;
-    }
+  mounted: function mounted () {
+        this.getAllData();
   },
   methods: {
     callMeMaybe(search_param) {
-      this.renderComponent = false;
-      this.$nextTick(() => {
-        this.renderComponent = true;
-        this.search = search_param;
-      });
+      this.search = search_param;
+      this.getAllData();
       console.log(search_param)
+    },
+    getAllData() {
+        return axios.get('http://localhost:1337/clubs?name_contains='+this.search).then((response)=> {
+          this.clubs = response.data
+          console.log(this.clubs)
+        })
     }
   }
-
- 
-
 }
 
 </script>
