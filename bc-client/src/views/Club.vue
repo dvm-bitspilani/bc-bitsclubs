@@ -5,7 +5,7 @@
       <div class="club-info">
       <div class="clublogo"><img 
           class="club-logo"
-          :src="club.logo" 
+          :src="club.logo.name" 
           alt=""
         ></div>  
 
