@@ -36,7 +36,6 @@
 
 
    <div class="tags-section">
-           
           <div v-for="tag in clubitem.tags" :key="tag.id"> 
           <AllTags :name="tag.TagTitle"/>
           </div>
@@ -58,12 +57,7 @@ import axios from 'axios'
             "imgSrc",
             "name", 
             "type", 
-            "tag1", 
-            "tag2", 
-            "tag3", 
-            "tag4", 
-            "tag5", 
-            
+            "tags",  
         ],
 
 data() {

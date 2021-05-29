@@ -5,24 +5,16 @@
     <div class="club-grid">
       <div 
         v-for="clubitem in clubs"
-        :key="clubitem.id"
-      >
+        :key="clubitem.id">
      
-        <ClubItem 
+        <ClubItem
+          :id="clubitem.id"
           :imgSrc="clubitem.logo.url"
           :name="clubitem.name"
-          :type="clubitem.clubType">
-     
-          </ClubItem>
-
-
-           <!-- <div class="tags-section">
-           
-          <div v-for="tag in clubitem.tags" :key="tag.id"> 
-          <AllTags :name="tag.TagTitle"/>
-          </div>
-         </div> -->
-          </div>
+          :type="clubitem.clubType"
+          :tag="clubitem.tags"
+        ></ClubItem>
+      </div>
 
 
 </div>
