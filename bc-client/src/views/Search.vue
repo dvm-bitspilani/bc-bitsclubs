@@ -13,7 +13,7 @@
     <div class="club-grid">
       <div v-for="clubitem in clubs" :key="clubitem.id">
         <ClubItem
-          :imgSrc="clubitem.logo"
+          :imgSrc="clubitem.logo.name"
           :name="clubitem.name"
           :type="clubitem.clubType"
           :tags="clubitem.tags"

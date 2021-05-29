@@ -3,7 +3,7 @@
         <div class="title-section">
             <img 
                 class="club-logo" 
-                :src="imgSrc" 
+                :src="imgSrc"
             />
             <div class="title-text">
                 <h1 class="club-name">{{ name }}</h1>
@@ -27,11 +27,7 @@
                     v-if="type === 'assoc'"
                     id="assoc-pill"
                 >{{ type }}</h2>
-
             </div>
-
-
-
         </div>
 
 
@@ -70,7 +66,6 @@ data() {
     try {
       const response = await axios.get('http://localhost:1337/clubs')
       this.clubs = response.data
-      
     } catch (error) {
       this.error = error;
     }

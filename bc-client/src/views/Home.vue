@@ -6,14 +6,19 @@
       <div 
         v-for="clubitem in clubs"
         :key="clubitem.id">
-     
-        <ClubItem
-          :id="clubitem.id"
-          :imgSrc="clubitem.logo.url"
-          :name="clubitem.name"
-          :type="clubitem.clubType"
-          :tags="clubitem.tags"
-        />
+        <router-link 
+          :to="{ path: '/club/'+clubitem.id}"
+          class="router-link-style"
+          >
+          <ClubItem
+            :id="clubitem.id"
+            :imgSrc="clubitem.logo.name"
+            :name="clubitem.name"
+            :type="clubitem.clubType"
+            :tags="clubitem.tags"
+          />
+        </router-link>
+
       </div>
 
 
@@ -105,6 +110,11 @@ export default {
     width: 85vw;
     height: 250px;  
   }
+}
+
+.router-link-style {
+  color: inherit;
+  text-decoration: none; /* no underline */
 }
 
 

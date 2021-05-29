@@ -13,7 +13,7 @@
                 <div class="cal-grid">
                    
                     <CalendarItem 
-                        :imgSrc="calItem.featureImage"
+                        :imgSrc="calItem.featureImage.name"
                         :eventName="calItem.eventName"
                         :date="calItem.date"
                         :link="calItem.link"
