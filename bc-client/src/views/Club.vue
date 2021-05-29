@@ -50,7 +50,7 @@
           :key="calItem.id"
         >
           <CalendarItem 
-            :imgSrc="calItem.imgSrc"
+            :imgSrc="calItem.featureImage.url"
             :eventName="calItem.eventName"
             :date="calItem.date"
             :link="calItem.link"

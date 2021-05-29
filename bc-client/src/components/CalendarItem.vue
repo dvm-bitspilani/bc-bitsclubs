@@ -119,29 +119,28 @@
  
     .cal-item {
         width: 300px;
-        padding-right:16px ;
-       }
-
+       padding-left: 30px;
+     padding-right: 30px;
+     text-align: left;
+     }
 
 
     .cal-name {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 800;
+ 
     }
 
     .cal-date, .cal-link { 
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 500;
         padding:1.8px ;
     }
     
 
     .cal-description { 
-        font-size: 14px;
+        font-size: 12px;
     }
-
-
-
 
 }
 
