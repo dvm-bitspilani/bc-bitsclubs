@@ -36,7 +36,7 @@
 
 
    <div class="tags-section">
-          <div v-for="tag in clubitem.tags" :key="tag.id"> 
+          <div v-for="tag in tags" :key="tag.id"> 
           <AllTags :name="tag.TagTitle"/>
           </div>
          </div>

@@ -12,7 +12,7 @@
           :imgSrc="clubitem.logo.url"
           :name="clubitem.name"
           :type="clubitem.clubType"
-          :tag="clubitem.tags"
+          :tags="clubitem.tags"
         ></ClubItem>
       </div>
 
