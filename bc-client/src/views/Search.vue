@@ -4,11 +4,13 @@
       type="text"
       class="search-bar"
       placeholder="Search for any interest, department, or club"
-      v-model="search"
+      v-model="search_param"
+      v-on:keyup.enter="callMeMaybe(search_param)"
+      v-on:submit="callMeMaybe(search_param)"
   > 
 
 
-    <br />
+    <br/>
     
     <div class="club-grid">
       <div v-for="clubitem in clubs" :key="clubitem.id">
@@ -34,36 +36,31 @@ export default {
   },
   data() {
     return {
+      renderComponent: true,
      	clubs: [],
-   error: null,
-   search:""
- 
-   
+      error: null,
+      search:"",
     }
-    }, 
-  
-
-     async mounted () {
+  }, 
+  async mounted () {
     try {
-      const response = await axios.get('http://localhost:1337/clubs')
+      const response = await axios.get('http://localhost:1337/clubs?name_contains='+this.search)
       this.clubs = response.data
       console.log(this.clubs)
-
-
- const query = qs.stringify({
-  _contains: [{ name: search}],
-});
-
-await request(`?${query}`);
-console.log(query)
-
 
     } catch (error) {
       this.error = error;
     }
-
-
-
+  },
+  methods: {
+    callMeMaybe(search_param) {
+      this.renderComponent = false;
+      this.$nextTick(() => {
+        this.renderComponent = true;
+        this.search = search_param;
+      });
+      console.log(search_param)
+    }
   }
 
  
