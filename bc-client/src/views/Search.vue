@@ -4,17 +4,19 @@
       type="text"
       class="search-bar"
       placeholder="Search for any interest, department, or club"
-    />
+      v-model="search"
+  > 
+
+
+    <br />
+    
     <div class="club-grid">
       <div v-for="clubitem in clubs" :key="clubitem.id">
         <ClubItem
           :imgSrc="clubitem.logo"
           :name="clubitem.name"
-          :type="clubitem.ClubType"
-          :tag1="clubitem.tags[0].TagTitle"
-          :tag2="clubitem.tags[1].TagTitle"
-          :tag3="clubitem.tags[2].TagTitle"
-      
+          :type="clubitem.clubType"
+          :tags="clubitem.tags"
         />
       </div>
     </div>
@@ -34,18 +36,39 @@ export default {
     return {
      	clubs: [],
    error: null,
+   search:""
+ 
+   
     }
-    },
+    }, 
+  
+
      async mounted () {
     try {
       const response = await axios.get('http://localhost:1337/clubs')
       this.clubs = response.data
+      console.log(this.clubs)
+
+
+ const query = qs.stringify({
+  _contains: [{ name: search}],
+});
+
+await request(`?${query}`);
+console.log(query)
+
+
     } catch (error) {
       this.error = error;
     }
+
+
+
   }
-  
-  }
+
+ 
+
+}
 
 </script>
 

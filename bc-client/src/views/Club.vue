@@ -5,7 +5,7 @@
       <div class="club-info">
       <div class="clublogo"><img 
           class="club-logo"
-          :src="clubs[0].logo" 
+          :src="clubs[0].logo.url" 
           alt=""
         ></div>  
 
@@ -50,7 +50,7 @@
           :key="calItem.id"
         >
           <CalendarItem 
-            :imgSrc="calItem.imgSrc"
+            :imgSrc="calItem.featureImage.url"
             :eventName="calItem.eventName"
             :date="calItem.date"
             :link="calItem.link"

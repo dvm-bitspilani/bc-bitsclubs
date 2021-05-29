@@ -13,7 +13,7 @@
           :name="clubitem.name"
           :type="clubitem.clubType"
           :tags="clubitem.tags"
-        ></ClubItem>
+        />
       </div>
 
 
