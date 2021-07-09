@@ -147,8 +147,8 @@
     position: relative;
     z-index: 5;
     top: 5%;  
-    width: 20px;  
-     height: 35px;
+    width: 12px;  
+     height: 26px;
     cursor: pointer;
     
 }
@@ -211,12 +211,12 @@
    top: 0;  
     background: #262626;
     width: 0;  
-     height: 100vh;
+     height: 110vh;
     box-sizing: border-box;
-    padding: 200px 0px;
+    padding: 50px 0px;
     text-align: center;
     z-index: 4;
-    transition: 1s ease-in;
+    transition: 0.7s ease-out;
     overflow-x: hidden ;
 
 

@@ -7,16 +7,19 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@adamdehaven/vue-custom-tooltip": "^2.0.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "axios": "^0.21.1",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue": "^2.6.14",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-router": "^3.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "v-tooltip": "^4.0.0-alpha.1",
+    "vue-template-compiler": "^2.6.14"
   }
 }

@@ -1,6 +1,31 @@
 <template>
   <div class="home">
-    <div class="hero-image"></div>
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/bits-image.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/bits-image.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/bits-image.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
     
     <div class="club-grid">
       <div 
@@ -61,13 +86,30 @@ export default {
 <style scoped>
   .home {
     padding: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 75px;
     margin: 0 40px 0 40px;
   }
+  
+
+  #carouselExampleIndicators{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  .carousel-inner{
+    width: 90%;
+  }
+
+  .carousel-inner img{
+    border-radius: 8px;
+  }
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin:-15px 8px
+}
 
   .hero-image {
     height: 500px;
@@ -86,7 +128,7 @@ export default {
     width: 100%;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .media-slider {
@@ -118,6 +160,8 @@ export default {
 }
 
 
-
+.club-grid{
+  justify-content: center;
+}
 
 </style>

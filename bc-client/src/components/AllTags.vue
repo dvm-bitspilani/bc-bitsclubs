@@ -1,18 +1,28 @@
 <template>
-<div class="sometag">
+
+
+<div class="sometag" v-tooltip.top="msg">
+<Tooltip text="bdhbvyerbvjrrjgbregb43v4">
 <h2 class="tag"> {{name}}</h2>
-
-
+</Tooltip>
 </div>
+
+
+
 </template>
 
 <script>
+
+import Tooltip from './Tooltip.vue'
 
 export default{
 name: "AllTags",
 props: ["name"],
 
-
+data:{
+    msg:'koko'
+},
+components:{Tooltip}
 }
 
 </script>
@@ -23,6 +33,7 @@ props: ["name"],
 <style scoped>
 
     .tag {
+    
         margin: 5px 3px 5px 3px;
         padding: 3px 18px 3px 18px;
         background: #616161;

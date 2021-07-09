@@ -1,5 +1,5 @@
 <template>
-    <div class="club-item">
+    <div class="club-item" >
         <div class="title-section">
             <img 
                 class="club-logo" 
@@ -55,11 +55,14 @@ import axios from 'axios'
             "type", 
             "tags",  
         ],
+    
 
 data() {
+    
 		return {
 			clubs: [],
           error: null,
+        
     }
   },
   async mounted () {
@@ -99,6 +102,7 @@ data() {
         display: flex;
         flex-direction: row;
         margin: 10px;
+
         height: 50%;
     }
     
@@ -110,7 +114,7 @@ data() {
 
     .club-name {
         margin: 0;
-        padding: 0;
+        padding: 0px;
         text-align: left;
         color: white;
         font-weight: 500;
@@ -150,7 +154,8 @@ data() {
         margin-left: 15px;
         flex-direction: column;
         align-items: flex-start;
-        justify-content:center;
+        justify-content:flex-start;
+        margin-top: -8px;
         
     }
 
@@ -161,6 +166,7 @@ data() {
         align-items: flex-start;
         justify-content: flex-start;
         flex-wrap: wrap;
+        z-index: 10;
         
     }
 
@@ -187,6 +193,11 @@ data() {
        font-size: 10px;
         }
    
+
+
+.title-text{
+    margin-top: -4px;
+}
 }
 
 

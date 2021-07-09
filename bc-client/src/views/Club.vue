@@ -21,7 +21,31 @@
         
       </div>
        <div class="club-status">
-        <h1 id="recr-true" class="status-pill" v-if="club.isRecruiting">RECRUITING</h1>
+    <a href="https://google.com" v-if="club.isRecruiting"><h1 id="recr-true" class="status-pill" > RECRUITING <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="25" height="20" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#ffffff" stroke="none">
+<path d="M3467 5104 c-154 -28 -292 -85 -422 -175 -47 -33 -308 -287 -800
+-781 -659 -661 -735 -741 -779 -816 -182 -308 -203 -676 -56 -989 53 -114 102
+-185 195 -282 100 -104 174 -157 306 -220 131 -63 237 -91 364 -98 l100 -5
+272 274 c217 219 273 280 281 311 28 102 -66 203 -171 183 -19 -4 -62 -29 -98
+-58 -78 -63 -150 -95 -235 -107 -296 -42 -552 215 -507 509 23 150 2 124 765
+891 734 737 727 731 853 764 307 80 604 -186 555 -498 -21 -134 -51 -180 -265
+-397 l-192 -195 97 -95 c102 -100 162 -178 233 -303 l44 -77 224 227 c233 237
+304 326 364 457 265 571 -20 1238 -615 1441 -155 53 -354 68 -513 39z"/>
+<path d="M2498 3133 c-244 -246 -277 -283 -284 -318 -10 -54 12 -111 58 -148
+30 -24 46 -29 87 -29 54 0 58 2 153 76 294 228 720 18 720 -354 0 -84 -25
+-173 -68 -243 -14 -23 -339 -355 -722 -737 -735 -734 -733 -732 -857 -765
+-308 -80 -608 192 -556 502 22 132 53 176 279 405 l204 206 -89 89 c-103 101
+-184 205 -242 313 l-40 74 -238 -239 c-249 -250 -316 -333 -378 -469 -185
+-400 -105 -872 201 -1181 134 -136 301 -232 489 -282 89 -23 118 -26 260 -26
+141 0 172 3 257 26 119 31 243 89 340 156 50 35 300 278 804 783 808 810 790
+789 873 1003 63 159 84 282 78 450 -5 159 -30 264 -95 395 -71 145 -228 323
+-364 413 -146 96 -329 159 -503 172 l-90 7 -277 -279z"/>
+</g>
+</svg> </h1></a>    
         <h1 id="recr-false" class="status-pill" v-else>NOT RECRUITING</h1>
       </div>
 
@@ -107,37 +131,33 @@
     <div class="club-contact">
       <h2 class="club-subh" id="media">Contact Us</h2>
        <div class="contact-grid">
-        <div >
+      
           <ContactCard
             :imgSrc="club.contact1.profilePicture[0].url"
             :name="club.contact1.name"
             :designation="club.contact1.designation"
             :email="club.contactEmail"
           />
-</div>
-   <div >
+
+
           <ContactCard
             :imgSrc="club.contact2.profilePicture[0].url"
             :name="club.contact2.name"
             :designation="club.contact2.designation"
             :email="club.contactEmail"
           />
-</div>
-   <div >
+
+  
           <ContactCard
             :imgSrc="club.contact3.profilePicture[0].url"
             :name="club.contact3.name"
             :designation="club.contact3.designation"
             :email="club.contactEmail"
           />
-</div>
-
-
-
-
 
 
       </div>
+
     </div>   
 
   </div>
@@ -177,6 +197,9 @@ import AllTags from '@/components/AllTags.vue'
 
 
 <style scoped>
+
+
+
 #mobile-tags{
   display: none;
 }
@@ -211,7 +234,9 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     margin-top: -8px;
 
   }
-
+#media{
+  margin-left: 150px;
+}
 
   .tags-section {
     display: flex;
@@ -256,7 +281,7 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     background: #616161;
     color:white;
     border-radius: 25px;
-    font-size: 28px;
+    font-size: 23px;
     text-transform: uppercase;
     display: inline-block;
     font-weight: 500;
@@ -268,6 +293,7 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
   #recr-true {
     background:#19d00a;
     box-shadow: rgba(104, 255, 70, 0.15) 0px 8px 24px;
+    cursor: pointer;
   }
   
   #recr-false {
@@ -279,7 +305,10 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     width: 60vw;
     display: flex;
     flex-direction: column;
+    margin-left: 150px;
   }
+
+
   .club-subh {
     margin: 50px 0 10px 0;
     padding: 0;
@@ -288,13 +317,15 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     font-size: 30px;
     letter-spacing: 0.8px;
   }
+  
   .club-p {
-    margin: 0px 0 10px 0;
+    margin: 0px 0 10px 11px;
     padding: 0;
     color: white;
     text-align: left;
     font-size: 19px;
     font-weight: 400;
+    letter-spacing: 0.4px;
   }
 
 
@@ -302,7 +333,8 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-     }
+    margin-left:162px;
+         }
  
   *::-webkit-scrollbar {
   height: 8px;
@@ -324,7 +356,7 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    margin-left: -10px;
+    margin-left: 153px;
   }
 
   .contact-grid {
@@ -333,6 +365,7 @@ box-shadow: -8px 11px 45px 1px rgba(0,0,0,0.52);
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+     margin-left: 162px;
   }
 
 
@@ -398,24 +431,29 @@ text-align: center;
 
     .club-text {
     width: 88vw;
+    margin-left: 0px;
     padding-left: 32px;
     }
 
 
     .media-slider, #media{padding-right: 20px;
     padding-left: 32px;
+    margin-left: 0;
     }
 
  
     .club-p { 
     font-size: 15px;
     padding-right:20px;
+    margin-left: 0;
+    letter-spacing: 0;
   }
 
 
     .cal-grid{
     justify-content: flex-start;
-    margin-left: 20px;
+    margin-left: 22px;
+   
     }
 
     .contact-grid {

@@ -24,13 +24,13 @@ export default {
 
 <style scoped>
     .wrapper {
-        margin-right: 30px;
+        margin-right: 60px;
     }
 
 
     .contact-card {
-        height: 100%;
-        width: 100%;
+      
+        width: 220px;
         background: #2f2f2f;
         border-radius: 15px;
         display: flex;
@@ -39,7 +39,8 @@ export default {
         align-items: center;
         margin-top: 12%;
          box-shadow: 7px 6px 20px -4px rgb(0 0 0 / 75%);
-       
+        
+      
     }
  
 
@@ -70,7 +71,8 @@ export default {
 
     .contact-img {
         height: 200px;
-        width: 180px;
+        width: 100%;
+      margin-bottom: 30px;
         padding: 20px;
         border-radius: 35px;
         object-fit: cover;
