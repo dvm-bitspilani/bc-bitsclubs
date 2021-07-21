@@ -129,7 +129,7 @@ methods: {
 
 #pill-details {
     background:#e28214;
-    box-shadow: rgba(104, 255, 70, 0.15) 0px 8px 24px;
+
   }
 
 
@@ -152,7 +152,7 @@ methods: {
 
  
 .club-link{
-  
+  z-index: 10;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -175,7 +175,7 @@ methods: {
 
   #pill-link {
     background:#061499;
-    box-shadow: rgba(104, 255, 70, 0.15) 0px 8px 24px;
+
   }
   
 

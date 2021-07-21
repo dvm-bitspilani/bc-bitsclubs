@@ -10,16 +10,15 @@
                   <div class="calendar-block">
                         <h2 class="cal-subh">{{ key }}</h2>
                         <div class="cal-grid">
-                              <CalendarItem 
-                                 v-for="calItem in value"
-                                    :key="calItem.id"  
+                              <CalendarItem
+                                    v-for="calItem in value"
+                                    :key="calItem.id"
                                     :imgSrc="calItem.featureImage.name"
                                     :eventName="calItem.eventName"
                                     :date="calItem.date"
                                     :link="calItem.link"
                                     :description="calItem.eventDescription"
                                     :modalName="calItem.eventName"
-                           
                               />
                         </div>
                   </div>
@@ -38,11 +37,7 @@ export default {
       },
 
       data() {
-            return {
-                  events: [],
-                  error: null,
-                  random:{}
-            };
+            return { random: {}, events: [], error: null, random_new: {} };
       },
 
       async mounted() {
@@ -54,42 +49,43 @@ export default {
                   console.log(response.data);
 
                   this.events.forEach((event) => {
-                    console.log(event);
-                  let eventDate = new Date(event.date);
-                  let currentMonth= new Date().getMonth();
-                  let eventMonth =eventDate.getMonth()
-                  let month = eventDate.toLocaleString('default', { month: 'short'});
-                  let year = eventDate.getFullYear();
-                 let identifier = `${month} ${year}`;
+                        console.log(event);
+                        let eventDate = new Date(event.date);
+                        let currentMonth = new Date().getMonth();
+                        let eventMonth = eventDate.getMonth();
+                        let month = eventDate.toLocaleString("default", {
+                              month: "short",
+                        });
+                        let year = eventDate.getFullYear();
+                        let identifier = `${month} ${year}`;
 
-                  if (eventMonth>=currentMonth) {
-                           try {
-                        this.random[identifier].push(event);
-                  } catch (error) {
-                    
-                        this.random[identifier] = [];
-                        this.random[identifier].push(event);
-                  }
-                    
-              }
+                        if (eventMonth >= currentMonth) {
+                              try {
+                                    this.random_new[identifier].push(event);
+                                    this.random = Object.assign(
+                                          {},
+                                          this.random,
+                                          this.random_new
+                                    );
+                              } catch (error) {
+                                    this.random_new[identifier] = [];
+                                    this.random_new[identifier].push(event);
 
-               
-            });
-
-            console.log(this.random);
-
+                                    this.random = Object.assign(
+                                          {},
+                                          this.random,
+                                          this.random_new
+                                    );
+                              }
+                        }
+                  });
             } catch (error) {
                   this.error = error;
                   console.log(error);
             }
+            console.log(this.random);
       },
 };
-
-
-
-
-
-
 </script>
 
 <style scoped>

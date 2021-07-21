@@ -79,6 +79,7 @@ fill="#ffffff" stroke="none">
             :date="calItem.date"
             :link="calItem.link"
             :description="calItem.eventDescription"
+             :modalName="calItem.eventName"
           />
         </div>
       </div>
