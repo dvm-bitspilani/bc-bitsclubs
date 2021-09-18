@@ -1,4 +1,3 @@
-// template --> add any HTML here @sarthak
 <template>
     <div class="navbar-root">
         <div class="nav-logo">
