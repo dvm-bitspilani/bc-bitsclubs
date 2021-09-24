@@ -187,7 +187,7 @@ import AllTags from '@/components/AllTags.vue'
   },
   async mounted () {
     try {
-      const response = await axios.get('http://localhost:1337/clubs/'+this.id)
+      const response = await axios.get('https://clubs.bits-dvm.org/items/clubs/'+this.id)
       this.club = response.data
     } catch (error) {
       this.error = error;

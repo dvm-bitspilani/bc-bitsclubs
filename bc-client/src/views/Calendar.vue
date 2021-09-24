@@ -43,7 +43,7 @@ export default {
       async mounted() {
             try {
                   const response = await axios.get(
-                        "http://localhost:1337/events"
+                        "https://clubs.bits-dvm.org/items/events"
                   );
                   this.events = response.data;
                   console.log(response.data);
