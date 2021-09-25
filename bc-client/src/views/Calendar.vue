@@ -52,15 +52,15 @@ export default {
                         console.log(event);
                         let eventDate = new Date(event.eventdatetime);
                         console.log(eventDate);
-                        let currentMonth = new Date().getMonth();
-                        let eventMonth = eventDate.getMonth();
+                        let currentDate = new Date().getDate();
+                        // let eventMonth = eventDate.getMonth();
                         let month = eventDate.toLocaleString("default", {
                               month: "short",
                         });
                         let year = eventDate.getFullYear();
                         let identifier = `${month} ${year}`;
 
-                        if (eventMonth >= currentMonth) {
+                        if (eventDate >= currentDate) {
                               try {
                                     this.random_new[identifier].push(event);
                                     this.random = Object.assign(
