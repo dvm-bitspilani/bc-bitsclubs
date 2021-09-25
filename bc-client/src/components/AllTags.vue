@@ -2,7 +2,7 @@
 
 
 <div class="sometag" v-tooltip.top="msg">
-<Tooltip text="bdhbvyerbvjrrjgbregb43v4">
+<Tooltip :text="desc">
 <h2 class="tag"> {{name}}</h2>
 </Tooltip>
 </div>
@@ -17,11 +17,8 @@ import Tooltip from './Tooltip.vue'
 
 export default{
 name: "AllTags",
-props: ["name"],
+props: ["name","desc"],
 
-data:{
-    msg:'koko'
-},
 components:{Tooltip}
 }
 

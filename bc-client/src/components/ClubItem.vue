@@ -33,7 +33,7 @@
 
    <div class="tags-section">
           <div v-for="tag in tags" :key="tag.id"> 
-          <AllTags :name="tag.TagTitle"/>
+          <AllTags :name="tag.tagTitle" :desc="tag.tagdesc"/>
           </div>
          </div>
   </div>
