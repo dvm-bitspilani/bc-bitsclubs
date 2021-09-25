@@ -13,12 +13,12 @@
                               <CalendarItem
                                     v-for="calItem in value"
                                     :key="calItem.id"
-                                    :imgSrc="calItem.featureImage.name"
-                                    :eventName="calItem.eventName"
-                                    :date="calItem.date"
-                                    :link="calItem.link"
-                                    :description="calItem.eventDescription"
-                                    :modalName="calItem.eventName"
+                                    :imgSrc="'https://clubs.bits-dvm.org/assets/'+ calItem.eventfeatureimage"
+                                    :eventName="calItem.eventname"
+                                    :date="calItem.eventdatetime"
+                                    :link="calItem.eventlink"
+                                    :description="calItem.eventdesc"
+                                    :modalName="calItem.eventname"
                               />
                         </div>
                   </div>
@@ -46,11 +46,12 @@ export default {
                         "https://clubs.bits-dvm.org/items/events"
                   );
                   this.events = response.data.data;
-                  console.log(response.data);
+                  console.log(this.events);
 
                   this.events.forEach((event) => {
                         console.log(event);
-                        let eventDate = new Date(event.date);
+                        let eventDate = new Date(event.eventdatetime);
+                        console.log(eventDate);
                         let currentMonth = new Date().getMonth();
                         let eventMonth = eventDate.getMonth();
                         let month = eventDate.toLocaleString("default", {
