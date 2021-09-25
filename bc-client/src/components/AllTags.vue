@@ -17,8 +17,7 @@ import Tooltip from './Tooltip.vue'
 
 export default{
 name: "AllTags",
-props: ["name","desc"],
-
+props: ["name","desc","msg"],
 components:{Tooltip}
 }
 

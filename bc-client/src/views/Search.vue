@@ -58,8 +58,8 @@ export default {
       console.log(search_param)
     },
     getAllData() {
-        return axios.get('http://localhost:1337/clubs?name_contains='+this.search).then((response)=> {
-          this.clubs = response.data
+        return axios.get('https://clubs.bits-dvm.org/items/clubs?search='+this.search).then((response)=> {
+          this.clubs = response.data.data
           console.log(this.clubs)
         })
     }

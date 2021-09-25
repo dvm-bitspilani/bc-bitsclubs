@@ -68,7 +68,7 @@ data() {
   async mounted () {
     try {
       const response = await axios.get('https://clubs.bits-dvm.org/items/clubs')
-      this.clubs = response.data
+      this.clubs = response.data.data
     } catch (error) {
       this.error = error;
     }

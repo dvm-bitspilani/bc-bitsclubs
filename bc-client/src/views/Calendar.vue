@@ -45,7 +45,7 @@ export default {
                   const response = await axios.get(
                         "https://clubs.bits-dvm.org/items/events"
                   );
-                  this.events = response.data;
+                  this.events = response.data.data;
                   console.log(response.data);
 
                   this.events.forEach((event) => {
