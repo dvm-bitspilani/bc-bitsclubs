@@ -18,13 +18,13 @@
           :to="{ path: '/club/'+clubitem.id}"
           class="router-link-style"
           >
-        <ClubItem
-          :id="clubitem.id"
-          :imgSrc="clubitem.logo.name"
-          :name="clubitem.name"
-          :type="clubitem.clubType"
-          :tags="clubitem.tags"
-        />
+         <ClubItem
+            :id="clubitem.id"
+            :name="clubitem.name"
+            :type="clubitem.clubtype"
+            :tags="clubitem.tags"
+            :imgSrc="'https://clubs.bits-dvm.org/assets/'+clubitem.logo"
+          />
          </router-link>
       </div>
     </div>
