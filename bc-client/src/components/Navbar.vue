@@ -144,7 +144,7 @@
 
 .container ul.toggle{
     position: relative;
-    z-index: 5;
+    z-index: 200001;
     top: 5%;  
     width: 12px;  
      height: 26px;
@@ -214,7 +214,7 @@
     box-sizing: border-box;
     padding: 50px 0px;
     text-align: center;
-    z-index: 4;
+    z-index: 20000;
     transition: 0.7s ease-out;
     overflow-x: hidden ;
 
@@ -222,14 +222,10 @@
 }
 
 .nav-menu.active{ 
-   width: 95vw;
+   width: 100vw;
     overflow: hidden;
-    left: 25px;
-    
+    left: 0px;
 }
-
-
-
 
 
 .nav-item{
