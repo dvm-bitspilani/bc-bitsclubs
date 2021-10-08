@@ -32,8 +32,8 @@
 
 
    <div class="tags-section">
-          <div v-for="tag in tags" :key="tag.id"> 
-          <AllTags :name="tag.tagTitle" :desc="tag.tagdesc"/>
+          <div v-for="tag in tags" :key="tag.tags_id.id"> 
+          <AllTags :name="tag.tags_id.tagtitle" :desc="tag.tags_id.tagdesc"/>
           </div>
          </div>
   </div>

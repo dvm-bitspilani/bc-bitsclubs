@@ -40,7 +40,7 @@
             :name="clubitem.name"
             :type="clubitem.clubtype"
             :tags="clubitem.tags"
-            :imgSrc="'https://clubs.bits-dvm.org/assets/'+clubitem.logo"
+            :imgSrc="'https://clubs.bits-dvm.org/assets/'+clubitem.logo.id"
           />
         </router-link>
 
@@ -73,7 +73,7 @@ export default {
   },
   async mounted () {
     try {
-      const response = await axios.get('https://clubs.bits-dvm.org/items/clubs')
+      const response = await axios.get('https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*')
       this.clubs = response.data.data
       console.log(this.clubs)
     } catch (error) {

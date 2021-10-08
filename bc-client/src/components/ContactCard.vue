@@ -39,6 +39,7 @@ export default {
         align-items: center;
         margin-top: 12%;
          box-shadow: 7px 6px 20px -4px rgb(0 0 0 / 75%);
+         padding: 10px;
         
       
     }
@@ -72,9 +73,9 @@ export default {
     .contact-img {
         height: 200px;
         width: 100%;
-      margin-bottom: 30px;
-        padding: 20px;
-        border-radius: 35px;
+        margin-bottom: 30px;
+        padding: 10px;
+        border-radius: 20px;
         object-fit: cover;
     }
 

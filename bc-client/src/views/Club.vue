@@ -6,15 +6,16 @@
           <img
             class="club-logo"
             alt=""
+            :src="'https://clubs.bits-dvm.org/assets/'+club.logo.id"
           />
         </div>
 
         <div class="club-info-text">
           <h1 class="club-title">{{ club.name }}</h1>
           <div class="tags-section" id="desktop-tags">
-            <div v-for="tag in club.tags" :key="tag.id">
-              <AllTags :name="tag.tagtitle" />
-            </div>
+             <div v-for="tag in club.tags" :key="tag.tags_id.id">
+          <AllTags :name="tag.tags_id.tagtitle" :desc="tag.tags_id.tagdesc" />
+        </div>
           </div>
         </div>
       </div>
@@ -63,8 +64,8 @@
       </div>
 
       <div class="tags-section" id="mobile-tags">
-        <div v-for="tag in club.tags" :key="tag.id">
-          <AllTags :name="tag.tagtitle" />
+        <div v-for="tag in club.tags" :key="tag.tags_id.id">
+          <AllTags :name="tag.tags_id.tagtitle" :desc="tag.tags_id.tagdesc" />
         </div>
       </div>
     </div>
@@ -78,14 +79,14 @@
       <h2 class="club-subh" id="media">Upcoming Events</h2>
       <div class="cal-grid">
         <div v-for="calItem in club.events" :key="calItem.id">
-          <!-- <CalendarItem
-            :imgSrc="calItem.featureImage.url"
-            :eventName="calItem.eventName"
-            :date="calItem.date"
-            :link="calItem.link"
-            :description="calItem.eventDescription"
-            :modalName="calItem.eventName"
-          /> -->
+          <CalendarItem
+            :imgSrc="'https://clubs.bits-dvm.org/assets/'+ calItem.events_id.eventfeatureimage"
+            :eventName="calItem.events_id.eventname"
+            :date="calItem.events_id.eventdatetime"
+            :link="calItem.events_id.eventlink"
+            :description="calItem.events_id.eventdesc"
+            :modalName="calItem.events_id.eventname"
+          />
         </div>
       </div>
     </div>
@@ -94,7 +95,7 @@
       <h2 class="club-subh" id="media">Portfolio and Past Work</h2>
       <div class="media-slider">
         <div v-for="item in club.portfolio" :key="item.id">
-          <Feature :imgSrc="item.url" />
+        <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" />
         </div>
       </div>
     </div>
@@ -107,7 +108,7 @@
     <div class="recruitment">
       <div class="club-text">
         <h2 class="club-subh">Recruitment Process</h2>
-        <p class="club-p">{{ club.recruitmentProcess }}</p>
+        <p class="club-p">{{ club.recruitmentprocess }}</p>
       </div>
     </div>
 
@@ -115,7 +116,7 @@
       <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
         <div v-for="item in club.portfolio" :key="item.id">
-          <Feature :imgSrc="item.url" />
+          <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" />
         </div>
       </div>
     </div>
@@ -130,9 +131,9 @@
       <div class="contact-grid">
         <ContactCard
         v-for="contact in club.contacts" :key="contact.id"
-            :imgSrc="contact.photo"  
-            :name="contact.name"
-            :email="contact.email"
+            :imgSrc="'https://clubs.bits-dvm.org/assets/'+ contact.contacts_id.photo"  
+            :name="contact.contacts_id.name"
+            :email="contact.contacts_id.email"
           />
       </div>
     </div>
@@ -163,10 +164,11 @@ export default {
   async mounted() {
     try {
       const response = await axios.get(
-        "https://clubs.bits-dvm.org/items/clubs/" + this.id
+        "https://clubs.bits-dvm.org/items/clubs/" + this.id+ '?fields[]=*.*.*'
       );
       this.club = response.data.data;
       console.log(this.club);
+      console.log(this.club.events[0].events_id);
     } catch (error) {
       this.error = error;
     }
