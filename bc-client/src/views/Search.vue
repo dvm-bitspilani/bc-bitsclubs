@@ -3,7 +3,7 @@
     <input
       type="text"
       class="search-bar"
-      placeholder="Search for any interest, department, or club"
+      placeholder="Search for any department, assoc or club"
       v-model="search_param"
       v-on:keyup.enter="callMeMaybe(search_param)"
       v-on:submit="callMeMaybe(search_param)"
