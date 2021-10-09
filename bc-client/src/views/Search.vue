@@ -18,12 +18,12 @@
           :to="{ path: '/club/'+clubitem.id}"
           class="router-link-style"
           >
-         <ClubItem
+        <ClubItem
             :id="clubitem.id"
             :name="clubitem.name"
             :type="clubitem.clubtype"
             :tags="clubitem.tags"
-            :imgSrc="'https://clubs.bits-dvm.org/assets/'+clubitem.logo"
+            :imgSrc="'https://clubs.bits-dvm.org/assets/'+clubitem.logo.id"
           />
          </router-link>
       </div>
@@ -58,7 +58,7 @@ export default {
       console.log(search_param)
     },
     getAllData() {
-        return axios.get('https://clubs.bits-dvm.org/items/clubs?search='+this.search).then((response)=> {
+        return axios.get('https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*.*?search='+this.search).then((response)=> {
           this.clubs = response.data.data
           console.log(this.clubs)
         })

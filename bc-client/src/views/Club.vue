@@ -78,16 +78,16 @@
     <div class="club-calendar">
       <h2 class="club-subh" id="media">Upcoming Events</h2>
       <div class="cal-grid">
-        <div v-for="calItem in club.events" :key="calItem.id">
+        <!-- <div v-for="calItem in club.events" :key="calItem.id">
           <CalendarItem
-            :imgSrc="'https://clubs.bits-dvm.org/assets/'+ calItem.events_id.eventfeatureimage"
+            :imgSrc="'https://clubs.bits-dvm.org/assets/'+ item.events_id.eventfeatureimage"
             :eventName="calItem.events_id.eventname"
             :date="calItem.events_id.eventdatetime"
             :link="calItem.events_id.eventlink"
             :description="calItem.events_id.eventdesc"
             :modalName="calItem.events_id.eventname"
           />
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -168,7 +168,7 @@ export default {
       );
       this.club = response.data.data;
       console.log(this.club);
-      console.log(this.club.events[0].events_id);
+      // console.log(this.club.events[1].id);
     } catch (error) {
       this.error = error;
     }

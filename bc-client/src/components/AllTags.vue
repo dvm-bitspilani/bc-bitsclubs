@@ -1,7 +1,7 @@
 <template>
 
 
-<div class="sometag" v-tooltip.top="msg">
+<div class="sometag">
 <Tooltip :text="desc">
 <h2 class="tag"> {{name}}</h2>
 </Tooltip>
@@ -17,7 +17,7 @@ import Tooltip from './Tooltip.vue'
 
 export default{
 name: "AllTags",
-props: ["name","desc","msg"],
+props: ["name","desc"],
 components:{Tooltip}
 }
 
