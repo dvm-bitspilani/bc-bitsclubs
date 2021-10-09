@@ -7,25 +7,24 @@
       v-model="search_param"
       v-on:keyup.enter="callMeMaybe(search_param)"
       v-on:submit="callMeMaybe(search_param)"
-  > 
+    />
 
+    <br />
 
-    <br/>
-    
     <div class="club-grid">
       <div v-for="clubitem in clubs" :key="clubitem.id">
-         <router-link 
-          :to="{ path: '/club/'+clubitem.id}"
+        <router-link
+          :to="{ path: '/club/' + clubitem.id }"
           class="router-link-style"
-          >
-        <ClubItem
+        >
+          <ClubItem
             :id="clubitem.id"
             :name="clubitem.name"
             :type="clubitem.clubtype"
             :tags="clubitem.tags"
-            :imgSrc="'https://clubs.bits-dvm.org/assets/'+clubitem.logo.id"
+            :imgSrc="'https://clubs.bits-dvm.org/assets/' + clubitem.logo.id"
           />
-         </router-link>
+        </router-link>
       </div>
     </div>
   </div>
@@ -33,7 +32,7 @@
 
 <script>
 import ClubItem from "@/components/ClubItem.vue";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   name: "Search",
@@ -43,34 +42,68 @@ export default {
   data() {
     return {
       renderComponent: true,
-     	clubs: [],
+      clubs: [],
       error: null,
-      search:"",
-    }
-  }, 
-  mounted: function mounted () {
-        this.getAllData();
+      search: "",
+      search_param: "",
+    };
+  },
+  mounted: function mounted() {
+    this.getAllData();
   },
   methods: {
     callMeMaybe(search_param) {
       this.search = search_param;
       this.getAllData();
-      console.log(search_param)
+      console.log(search_param);
     },
     getAllData() {
-        return axios.get('https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*.*?search='+this.search).then((response)=> {
-          this.clubs = response.data.data
-          console.log(this.clubs)
-        })
-    }
-  }
-}
+      if (this.search !== "") {
+        this.clubs=[];
+        let newIds = [];
+        var newClubs = [];
+        axios
+          .get("https://clubs.bits-dvm.org/items/clubs?search=" + this.search)
+          .then((response) => {
+            var someClubs = [];
+            someClubs = response.data.data;
+            console.log(someClubs);
+            someClubs.forEach((item) => {
+              console.log(item);
+              newIds = [...newIds, item.id];
+            });
+            console.log(newIds);
 
+            // console.log(newIds + "pl");
+
+            newIds.forEach((id) => {
+              axios
+                .get(
+                  "https://clubs.bits-dvm.org/items/clubs/" +
+                    id +
+                    "?fields[]=*.*.*"
+                )
+                .then((response) => {
+                  newClubs = [...newClubs, response.data.data];
+                  console.log(newClubs);
+                  this.clubs = newClubs;
+                });
+            });
+          });
+      } else {
+        return axios
+          .get("https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*")
+          .then((response) => {
+            this.clubs = response.data.data;
+            console.log(this.clubs);
+          });
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
-
-
 .search {
   margin: none;
   padding: none;
@@ -119,7 +152,6 @@ input {
     width: 70vw;
     font-size: 14px;
   }
-
 }
 
 .router-link-style {
