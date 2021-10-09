@@ -115,7 +115,7 @@
     <div>
       <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
-        <div v-for="item in club.portfolio" :key="item.id">
+        <div v-for="item in club.gallery" :key="item.id">
           <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" />
         </div>
       </div>
