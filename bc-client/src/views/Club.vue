@@ -86,6 +86,8 @@
             :link="calItem.events_id.eventlink"
             :description="calItem.events_id.eventdesc"
             :modalName="calItem.events_id.eventname"
+           :shortDescription="calItem.events_id.eventshortdesc"
+
           />
         </div>
       </div>

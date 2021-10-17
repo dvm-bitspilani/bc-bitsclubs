@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="cal-description">
-        <p>{{ description }}</p>
+        <p>{{ shortDescription }}</p>
       </div>
     </div>
 
@@ -67,6 +67,7 @@
       :height="600"
       :focusTrap="false"
       :adaptive="true"
+      class="mainModal"
     >
       <div class="modal-wrapper">
         <div class="event-info">
@@ -74,7 +75,7 @@
           <div class="event-name">
             <h3>{{ eventName }}</h3>
 
-            <h4>{{ date }}</h4>
+            <h4>{{ date | moment("MMMM Do YYYY") }}</h4>
             <a :href="link">Register</a>
           </div>
         </div>
@@ -89,7 +90,15 @@
 <script>
 export default {
   name: "CalendarItem",
-  props: ["imgSrc", "eventName", "date", "link", "description", "modalName"],
+  props: [
+    "imgSrc",
+    "eventName",
+    "date",
+    "link",
+    "description",
+    "modalName",
+    "shortDescription",
+  ],
 
   methods: {
     show() {
@@ -124,17 +133,37 @@ export default {
 .modal-wrapper {
   display: flex;
   flex-direction: column;
+  padding: 40px;
+}
+
+.modal-wrapper h4 {
+  font-size: 20px;
+}
+.event-desc {
+  text-align: left;
+  margin-top: 40px;
 }
 
 .event-info {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .event-name {
   display: flex;
   flex-direction: column;
+  margin-left: 40px;
+  text-align: left;
+}
+.event-name a {
+  /* text-decoration: none; */
+  color: black;
+  font-weight: 600;
+}
+
+.event-name h3 {
+  font-size: 20px;
 }
 
 .club-link {
@@ -240,6 +269,13 @@ export default {
 }
 
 @media (max-width: 650px) {
+  .vm--modal {
+    width: 200px !important;
+  }
+  .modal-wrapper img {
+    width: 100px;
+    height: 100px;
+  }
   .cal-item {
     width: 300px;
     text-align: left;
@@ -259,6 +295,16 @@ export default {
 
   .cal-description {
     font-size: 12px;
+  }
+  .event-name h3 {
+    font-size: 16px;
+  }
+
+  .modal-wrapper h4 {
+  font-size: 16px;
+}
+  .event-desc p{
+    font-size: 14px;
   }
 }
 </style>

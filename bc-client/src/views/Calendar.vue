@@ -19,6 +19,7 @@
                                     :link="calItem.eventlink"
                                     :description="calItem.eventdesc"
                                     :modalName="calItem.eventname"
+                                    :shortDescription="calItem.eventshortdesc"
                               />
                         </div>
                   </div>
