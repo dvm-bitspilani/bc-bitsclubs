@@ -67,6 +67,7 @@
       :height="600"
       :focusTrap="false"
       :adaptive="true"
+      classes="modal-override"
       class="mainModal"
     >
       <div class="modal-wrapper">
@@ -158,12 +159,14 @@ export default {
 }
 .event-name a {
   /* text-decoration: none; */
-  color: black;
+  color: white;
   font-weight: 600;
 }
 
 .event-name h3 {
   font-size: 20px;
+  text-transform: capitalize;
+
 }
 
 .club-link {
@@ -194,7 +197,7 @@ export default {
   width: 340px;
   height: 100%;
   padding: 10px;
-  margin: 15px 10px 15px 10px;
+  margin: 15px 10px 15px 0px;
   background: #2f2f2f;
   border-radius: 20px;
   display: flex;
@@ -267,6 +270,7 @@ export default {
   line-height: 1.45;
   font-size: 15px;
 }
+
 
 @media (max-width: 650px) {
   .vm--modal {

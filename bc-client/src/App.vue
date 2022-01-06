@@ -60,5 +60,8 @@
     text-align: center;
     background: #191919;
   }
-
+ .modal-override {
+   background-color:#202020 !important;
+   color: white;
+ }
 </style>

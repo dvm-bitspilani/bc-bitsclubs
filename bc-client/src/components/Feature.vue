@@ -23,6 +23,7 @@
         height: 250px;
         margin: 10px 40px 10px 0px;
         border-radius: 20px;
+        object-fit: cover;
     }
 
 

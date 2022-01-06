@@ -4,7 +4,7 @@
             <img :src="imgSrc" class="contact-img" >
             <div class="contact-name">{{ name }}</div>
             <div class="contact-desig">{{ designation }}</div>
-            <div class="contact-email">Email: {{ email }}</div>
+            <div class="contact-email">{{ email }}</div>
 
         </div>
     </div>

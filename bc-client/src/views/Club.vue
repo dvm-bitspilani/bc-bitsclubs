@@ -187,6 +187,10 @@ export default {
   margin: 40px 60px 40px 70px;
 }
 
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 .club-header,
 .club-info {
   display: flex;
@@ -291,7 +295,7 @@ export default {
 }
 
 .club-p {
-  margin: 0px 0 10px 11px;
+  margin: 0px 0 10px 0px;
   padding: 0;
   color: white;
   text-align: left;
@@ -304,11 +308,11 @@ export default {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  margin-left: 162px;
+  margin-left: 153px;
 }
 
 *::-webkit-scrollbar {
-  height: 8px;
+  height: 0px;
 }
 
 *::-webkit-scrollbar-track {
@@ -336,7 +340,7 @@ export default {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 162px;
+  margin-left: 153px;
 }
 
 @media (max-width: 650px) {
