@@ -213,7 +213,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: -8px;
+  margin-top: 0px;
 }
 #media {
   margin-left: 150px;
@@ -386,7 +386,7 @@ export default {
   }
 
   .tags-section {
-    padding-top: 14px;
+    padding-top: 5px;
   }
 
   .tag {
@@ -415,7 +415,7 @@ export default {
 
   .cal-grid {
     justify-content: flex-start;
-    margin-left: 22px;
+    margin-left: 32px;
   }
 
   .contact-grid {

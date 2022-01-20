@@ -149,6 +149,7 @@
     width: 12px;  
      height: 26px;
     cursor: pointer;
+    margin:0
     
 }
 
@@ -215,7 +216,7 @@
     padding: 50px 0px;
     text-align: center;
     z-index: 20000;
-    transition: 0.7s ease-out;
+    transition: 0.4s linear;
     overflow-x: hidden ;
 
 

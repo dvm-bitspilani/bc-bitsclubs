@@ -99,7 +99,7 @@ export default {
     padding: 40px 0;
   }
   .carousel-inner{
-    width: 90%;
+    width: 100%;
   }
 
   .carousel-inner img{
