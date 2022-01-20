@@ -18,7 +18,7 @@
 </div>
 <div class="event-desc">
    <p>{{text}}</p> 
-
+ dsfdsfsadsadfasdsffds
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat rem necessitatibus consectetur unde quasi tenetur saepe sed sequi voluptate consequatur provident ex, ea voluptas quod beatae est minima alias pariatur.
 
 </div>
