@@ -64,4 +64,11 @@
    background-color:#202020 !important;
    color: white;
  }
+
+ @media (max-width:768px) {
+    .modal-override {
+  left:5% !important;
+  width:90% !important
+ }
+ }
 </style>
